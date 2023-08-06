@@ -1,0 +1,21 @@
+@import url(https://db.onlinewebfonts.com/c/7908e7be605377f17d6c0f074e33a3d9?family=Neuzeit+Office+W01+Regular);
+
+@font-face {
+  font-family: "Neuzeit Office W01 Regular";
+  src: url("https://db.onlinewebfonts.com/t/7908e7be605377f17d6c0f074e33a3d9.eot");
+  src: url("https://db.onlinewebfonts.com/t/7908e7be605377f17d6c0f074e33a3d9.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/7908e7be605377f17d6c0f074e33a3d9.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/7908e7be605377f17d6c0f074e33a3d9.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/7908e7be605377f17d6c0f074e33a3d9.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/7908e7be605377f17d6c0f074e33a3d9.svg#Neuzeit Office W01 Regular")format("svg");
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Neuzeit Office W01 Regular";
+}
+
+#root{
+    min-height: 100vh;
+}
