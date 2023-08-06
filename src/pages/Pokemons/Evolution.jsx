@@ -1,7 +1,11 @@
 import React from "react";
 
 function Evolution(){
-    return <h1>Evolution goes here</h1>
+    return (
+        <div className="datas-container">
+            <h1>Evolutions</h1>
+        </div>
+    )
 }
 
 export default Evolution
