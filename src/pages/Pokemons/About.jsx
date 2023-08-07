@@ -1,25 +1,27 @@
 import React from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { getPokemonsDescription } from "../../api";
+import PokemonDetail from "./PokemonDetail";
 
 function About(){
     const pokemon = useOutletContext()
     const [pokemonDescription, setPokemonDescription] = React.useState(null)
     const {id} = useParams()
+
     React.useEffect(() => {
         async function loadPokemonDescrition(){
-            const data = await getPokemonsDescription(id)
+            const data = await getPokemonsDescription(pokemon.id)
             setPokemonDescription(data)
         } 
         loadPokemonDescrition()
-    }, [])
-    console.log(pokemonDescription && pokemonDescription)
+    }, [id])
+
     const femaleRate = pokemonDescription && pokemonDescription['gender_rate']/8*100;
     const maleRate = 100 - femaleRate;
     const eggGroupes = pokemonDescription && pokemonDescription["egg_groups"][0].name
 
     return ( pokemonDescription &&
-        <div className="datas-container">
+        <div className="about-container">
             <div className="description-pokemon">
                 <p>{pokemonDescription["flavor_text_entries"][0]["flavor_text"]}</p>
             </div>
@@ -45,7 +47,7 @@ function About(){
 
                 <div className="pokemon-elements">
                     <p  className="elements-title" >Egg Groupes</p>
-                    {<p>{eggGroupes}</p>}
+                    {pokemonDescription && <p>{eggGroupes}</p>}
                 </div>
             </div>
 

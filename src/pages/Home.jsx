@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Home(){
     return(
-        <>
+        <div className="home">
             <h1>Welcome to the pokedex</h1>
             <div className="link-container">
                 <Link to="pokemons" className="links pokedex">Pokedex</Link>
@@ -11,7 +11,7 @@ function Home(){
                 <Link to="abilities" className="links abilities">Abilities</Link>
                 <Link to="items" className="links items">Items</Link>
             </div>
-        </>
+        </div>
     )
 }
 

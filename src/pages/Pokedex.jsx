@@ -1,43 +1,15 @@
 import React from "react";
 import { getDatas, getPokemons } from "../api";
 import { Link } from "react-router-dom";
+import setBodyColor from "../setBodyColor";
+import { PokemonContext } from "../context/PokemonDataContext";
 
 function Pokedex(){
-    const [pokemonsUrl, setPokemonsUrl] = React.useState([])
-    const [pokemonsData, setPokemonsData] = React.useState([])
+    const { pokemonsData } = React.useContext(PokemonContext)
     const [loading, setLoading] = React.useState(null)
     const [error, setError] = React.useState(null)
-
-    React.useEffect(() => {
-        async function getPokemonsData(){
-            setLoading(true)
-            try{
-                const data = await getDatas()
-                setPokemonsUrl(data)
-            } catch (err){
-                setError(err)
-            } finally {
-                setLoading(false)
-            }
-        }
-        getPokemonsData()
-    }, [])
-
-    React.useEffect(() => {
-        async function loadPokedex(){
-            setLoading(true)
-            try{
-                const data = await Promise.all(pokemonsUrl.map(pokemonUrl => getPokemons(pokemonUrl.url)));
-                setPokemonsData(data)
-            } catch(err) {
-                setError(err)
-            } finally {
-                setLoading(false)
-            }
-        }
-        loadPokedex();
-    }, [pokemonsUrl]);
-
+    
+    setBodyColor({color:" #fff"})
     if (loading) {
         return (
             <div className="wrapper">
@@ -51,9 +23,11 @@ function Pokedex(){
     }
     
     const pokemonsElement = pokemonsData.map(pokemon =>{
+
         const types = pokemon.types.map(obj => obj.type.name)
         const styles = types[0]
         const image = pokemon.sprites && pokemon.sprites.other["official-artwork"]["front_default"]
+
         return (
         <Link to={`${pokemon.id}`} className={`pokemon-container ${styles}`} key={pokemon.id}>
             <div className="pokemon-data">
@@ -78,8 +52,6 @@ function Pokedex(){
             {pokemonsElement}
         </div>
         )
-
-        
 }
 
 export default Pokedex

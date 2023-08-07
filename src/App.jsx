@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState, createContext} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Pokedex from './pages/Pokedex';
@@ -12,29 +12,34 @@ import About from './pages/Pokemons/About';
 import PokemonMove from './pages/Pokemons/PokemonMove';
 import Evolution from './pages/Pokemons/Evolution';
 import Stats from './pages/Pokemons/Stats';
+import { getDatas, getPokemons } from './api';
+import PokemmonDataContext from './context/PokemonDataContext';
+
+
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
+  return(
+    <PokemmonDataContext>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
 
-        <Route path="/" element={<Home/>} />
-
-        <Route element={<Header />}>
-            <Route path="pokemons" element={<Pokedex />} />
+          <Route element={<Header />}>
+              <Route path="pokemons" element={<Pokedex />} />
               <Route path="items" element={<Items />} />
               <Route path="moves" element={<Moves />} />
               <Route path="abilities" element={<Abilities />} />
-        </Route>
+          </Route>
 
-        <Route path="pokemons/:id" element={<PokemonDetail/>}>
-          <Route index element={< About />}  />
-          <Route path="stats" element={<Stats />}/>
-          <Route path="evolution" element={<Evolution />}/>
-          <Route path="pokemonMove" element={<PokemonMove />}/>
-        </Route>
+          <Route path="pokemons/:id" element={<PokemonDetail/>}>
+            <Route index element={< About />}  />
+            <Route path="stats" element={<Stats />}/>
+            <Route path="evolution" element={<Evolution />}/>
+            <Route path="pokemonMove" element={<PokemonMove />}/>
+          </Route>
 
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </PokemmonDataContext>
   )
 }
 export default App
