@@ -228,10 +228,9 @@ body {
 }
 
 .pokemon-detail-container{
-  height: 100vh;
   padding: 20px;
-  position: relative;
   max-width: 730px;
+  position: relative;
 }
 
 .pokemon-name-id-container{
@@ -275,7 +274,6 @@ body {
   border-top-right-radius: 10px;
   position: absolute;
   max-width: 730px;
-  top: 40%;
   min-height: 65%;
   padding: 5px 20px;
   min-width: 100%
@@ -315,7 +313,6 @@ a{
   max-width: 240px;
   position: absolute;
   z-index: 10;
-  top: 150px;
 }
 
 .next-pokemon{
