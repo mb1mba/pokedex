@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState }from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { getPokemonsDescription } from "../../api";
-import PokemonDetail from "./PokemonDetail";
 
 function About(){
     const pokemon = useOutletContext()
-    const [pokemonDescription, setPokemonDescription] = React.useState(null)
+    const [femaleRate, setFemaleRate] = useState(null);
+    const [maleRate, setMaleRate] = useState(null);
+    const [pokemonDescription, setPokemonDescription] = useState(null)
+    const [eggGroupes, setEggGroupes] = useState(null);
     const {id} = useParams()
+
 
     React.useEffect(() => {
         async function loadPokemonDescrition(){
             const data = await getPokemonsDescription(pokemon.id)
-            setPokemonDescription(data)
+            setPokemonDescription(data);
+
+            const genderRate = data["gender_rate"];
+            setFemaleRate((genderRate / 8) * 100);
+            setMaleRate(100 - femaleRate);
+
+            setEggGroupes(data["egg_groups"][0].name)
         } 
         loadPokemonDescrition()
     }, [id])
-
-    const femaleRate = pokemonDescription && pokemonDescription['gender_rate']/8*100;
-    const maleRate = 100 - femaleRate;
-    const eggGroupes = pokemonDescription && pokemonDescription["egg_groups"][0].name
 
     return ( pokemonDescription &&
         <div className="about-container">

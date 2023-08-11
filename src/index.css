@@ -398,3 +398,73 @@ font-weight: 700;
   0% { width: 0; }
   100% { width: 100%; }
 }
+
+/* Pokemon move nav */
+.pokemon-moves-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.pokemon-move-characteristic{
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.logo-type{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.logo-type.water{
+  background-color: #6890f0;
+}
+
+
+.logo-type.poison{
+  background-color: #a040a0;
+}
+
+.logo-type.normal{
+  background-color: #a8a878;
+}
+
+.logo-type.fire{
+  background-color: #f08030;
+}
+
+.logo-type.bug{
+  background-color: #a8b820;
+}
+
+.logo-type.psychic{
+  background-color: #be95c4;
+}
+
+.logo-type.fighting{
+  background-color: #c03028;
+}
+
+.logo-type.ground{
+  background-color: #e0c068;
+}
+
+.logo-type.electric{
+  background-color: #e7e700;
+}
+
+.logo-type.rock{
+  background-color: #b8a038;
+}
+
+.logo-type.grass{
+  background-color: #78c850;
+}
+
+.logo-type.dragon{
+  background-color: #78c850;
+}

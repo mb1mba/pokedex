@@ -34,7 +34,7 @@ function App() {
             <Route index element={< About />}  />
             <Route path="stats" element={<Stats />}/>
             <Route path="evolution" element={<Evolution />}/>
-            <Route path="pokemonMove" element={<PokemonMove />}/>
+            <Route path="moves" element={<PokemonMove />}/>
           </Route>
 
         </Routes>
