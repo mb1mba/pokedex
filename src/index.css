@@ -1,6 +1,3 @@
-header{
-  padding: 20px;
-}
 
 :root {
   --bodyColor: "#000000";
@@ -8,6 +5,22 @@ header{
 body {
   background-color: var(--bodyColor);
 }
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+}
+
+input{
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  border: solid 1px black;
+  padding: 20px 10px;
+}
+
 /* HOME PAGE */
 .home{
   padding: 20px;
@@ -21,9 +34,10 @@ body {
 .link-container{
   width: 100%;
   margin-top: 20px;
-  display: grid;
-  grid-template: repeat(4, 13vh)/  auto;
-  grid-gap:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:400px
 }
 
 .links{
@@ -44,6 +58,7 @@ body {
   font-size: 1.7rem;
   padding-left:10px;
   font-weight: 700;
+  margin-top:0px;
 }
 
 .links.pokedex{
@@ -51,7 +66,7 @@ body {
 }
 
 .links.moves{
-  background-color: #E4362B ;
+  background-color: #E4362B ;margin: 0px;
 }
 
 .links.items{
@@ -148,6 +163,7 @@ h1{
   color:black;
   margin-bottom: 25px
 }
+
 .pokedex-container{
   display: flex;
   align-items: center;
@@ -202,7 +218,6 @@ h1{
 
 .pokemon-img{
   width: 160px;
-  
 }
 
 .pokemon-types{
@@ -317,16 +332,26 @@ a{
 
 .next-pokemon{
   position: absolute;
-  right: 0;
+  left: 315px;
+  top: 9.5rem;
+  z-index: 10;
+}
+
+.queue {
+  width: 200px;
+  filter: brightness(0) opacity(0.7) contrast(0.5) drop-shadow(0 0 0 black);
+  
 }
 
 .prev-pokemon{
   position:absolute;
-  left: 0;
+  right: 320px;
+  top: 45%
 }
 
 .datas-container{
   animation: showup 1s;
+  margin-top: 40px;
 }
 
 @keyframes showup {
@@ -410,7 +435,7 @@ font-weight: 700;
   padding: 10px 0;
 }
 .pokemon-move{
- margin: 0
+ margin: 0;
 }
 .move-description{
   white-space: nowrap; 
@@ -497,4 +522,30 @@ font-weight: 700;
 
 .logo-type.dark{
   background-color: #4f4747;
+}
+
+.move-accuracy,
+.move-power{
+  background-color: grey;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff
+}
+
+.move-accuracy{
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.move-power{
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.move-stats{
+  display: flex;
+  gap: 2px;
 }

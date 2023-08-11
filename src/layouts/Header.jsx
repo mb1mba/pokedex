@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
+import { PokemonSearchContext } from "../context/PokemonSearchContext";
 
 function Header(){
+    const { searchState, setSearchState } = useContext(PokemonSearchContext)
     const location = useLocation();
     const headerTitle = location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.substring(1).slice(1);
-    console.log(location)
+
+    function handleChange(event){
+        setSearchState({value: event.target.value})
+    }
+
     return(
-        <header>
+        <div className="container">
             <Link to="/"> &larr; Go back</Link>
             <h1>{headerTitle}</h1>
-            <input type="search" placeholder={`Search for ${headerTitle}`}></input>
-            {location.pathname === "/pokemons"  ? <p>filters</p>: null}
+            <input 
+                onChange={handleChange}
+                value={searchState?.value}
+                className="input"
+                type="search" 
+                placeholder={`Search for ${headerTitle}`}>
+            </input>
+                {location.pathname === "/pokemons"  ? <p>filters</p>: null}
             <Outlet />
-        </header>
+        </div>
     )
 }
 

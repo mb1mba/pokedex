@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Pokemon({currentPokemon, image, pokemonSpecies, types, hasNextPokemon, hasPreviousPokemon}){
+export default function Pokemon({currentPokemon, image, pokemonSpecies, types, hasNextPokemon, hasPreviousPokemon, nextPokemonImage, prevPokemonImage}){
+    
     return (
         <div className="pokemon-detail-container" key={currentPokemon.id}>
                 <Link to="/pokemons"> &larr;</Link>
@@ -22,13 +23,14 @@ export default function Pokemon({currentPokemon, image, pokemonSpecies, types, h
                             </div>
                             <p className="pokemon-species">{pokemonSpecies}</p>
                         </div>
-
+                        
                         <div className="pokemon-img-container">
                             <img className="pokemon-img-data" src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
-                            {hasNextPokemon && <Link to={`/pokemons/${currentPokemon.id + 1}`} className="next-pokemon">Next</Link>}
-                            {hasPreviousPokemon && <Link to={`/pokemons/${currentPokemon.id - 1}`} className="prev-pokemon">Prev</Link>}
                         </div>
+                         {hasNextPokemon && <Link className="pokemon-queue" to={`/pokemons/${currentPokemon.id + 1}`}><img  src={nextPokemonImage} className="queue next-pokemon"></img></Link>}
+                        {hasPreviousPokemon && <Link className="pokemon-queue" to={`/pokemons/${currentPokemon.id - 1}`}><img src={prevPokemonImage}  className=" queue prev-pokemon"></img></Link>}
+
                     </div>
                 </div>
             </div>

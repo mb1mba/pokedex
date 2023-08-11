@@ -23,23 +23,28 @@ function PokemonMove(){
     }, [currentPokemon.id])
 
     return (
-        <div className="moves">
-          {pokemonMoves.map(move =>
-          <> 
-          <div className={`pokemon-moves-details ${move.type.name}`}>
-            <div className="move-desc">
-                <p className="pokemon-move">{move.name}</p>
+        <div className="datas-container">
+            
+            <div className="moves">
+            {pokemonMoves.map(move =>
+            <div data-aos="fade-up"> 
+            <div className={`pokemon-moves-details ${move.type.name}`}>
+                <div className="move-desc">
+                    <p className="pokemon-move">{move.name}</p>
+                </div>
+                <div className="pokemon-move-characteristic">
+                    <p className="move-description">{move?.["flavor_text_entries"][0]?.["flavor_text"]}</p>
+                    <div className="move-stats">
+                        <p className="move-accuracy">{move.accuracy ? move.accuracy : "-"}</p>
+                        <p className="move-power">{move.power ? move.power : "-"}</p>
+                    </div>
+                    <img src={`../../${move.type.name}.svg`} className={`logo-type ${move.type.name}`}></img>
+                </div>  
             </div>
-             <div className="pokemon-move-characteristic">
-             <p className="move-description">{move?.["flavor_text_entries"][0]?.["flavor_text"]}</p>
-                <p>{move.accuracy ? move.accuracy : "-"}</p>
-                <p>{move.power ? move.power : "-"}</p>
-                <img src={`../../${move.type.name}.svg`} className={`logo-type ${move.type.name}`}></img>
-             </div>  
-          </div>
-          <hr/>
-        </>
-            )}
+            <hr/>
+            </div>
+                )}
+            </div>
         </div>
     )
 }

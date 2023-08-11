@@ -26,7 +26,7 @@ function About(){
     }, [id])
 
     return ( pokemonDescription &&
-        <div className="about-container">
+        <div className="datas-container">
             <div className="description-pokemon">
                 <p>{pokemonDescription["flavor_text_entries"][0]["flavor_text"]}</p>
             </div>

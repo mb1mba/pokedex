@@ -12,33 +12,42 @@ import About from './pages/Pokemons/About';
 import PokemonMove from './pages/Pokemons/PokemonMove';
 import Evolution from './pages/Pokemons/Evolution';
 import Stats from './pages/Pokemons/Stats';
-import { getDatas, getPokemons } from './api';
+import {PokemonSearchProvider} from './context/PokemonSearchContext';
 import PokemmonDataContext from './context/PokemonDataContext';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 function App() {
+
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [location.pathname])
+
   return(
     <PokemmonDataContext>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} />
+      <PokemonSearchProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>} />
 
-          <Route element={<Header />}>
-              <Route path="pokemons" element={<Pokedex />} />
-              <Route path="items" element={<Items />} />
-              <Route path="moves" element={<Moves />} />
-              <Route path="abilities" element={<Abilities />} />
-          </Route>
+            <Route element={<Header />}>
+                <Route path="pokemons" element={<Pokedex />} />
+                <Route path="items" element={<Items />} />
+                <Route path="moves" element={<Moves />} />
+                <Route path="abilities" element={<Abilities />} />
+            </Route>
 
-          <Route path="pokemons/:id" element={<PokemonDetail/>}>
-            <Route index element={< About />}  />
-            <Route path="stats" element={<Stats />}/>
-            <Route path="evolution" element={<Evolution />}/>
-            <Route path="moves" element={<PokemonMove />}/>
-          </Route>
+            <Route path="pokemons/:id" element={<PokemonDetail/>}>
+              <Route index element={< About />}  />
+              <Route path="stats" element={<Stats />}/>
+              <Route path="evolution" element={<Evolution />}/>
+              <Route path="moves" element={<PokemonMove />}/>
+            </Route>
 
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </PokemonSearchProvider>
     </PokemmonDataContext>
   )
 }

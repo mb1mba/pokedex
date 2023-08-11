@@ -8,7 +8,7 @@ export default function Pokemons({pokemon}){
     
     return (
     <Link to={`${pokemon.id}`} className={`pokemon-container ${styles}`} key={pokemon.id}>
-        <div className="pokemon-data">
+        <div className="pokemon-data" key={pokemon.id}>
             <h2 className="pokemon-name">{pokemon.name}</h2>
             <div className="pokemon-types">
                 {types.map(type => 
@@ -23,4 +23,5 @@ export default function Pokemons({pokemon}){
             <img className="pokemon-img" src={image}></img>
         </div>
     </Link>
+
 )}
