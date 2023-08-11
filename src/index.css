@@ -400,17 +400,31 @@ font-weight: 700;
 }
 
 /* Pokemon move nav */
+.moves{
+  margin-top: 20px;
+}
 .pokemon-moves-details{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
+  align-items: start;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.pokemon-move{
+ margin: 0
+}
+.move-description{
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  width: 200px;
+  margin: 0
 }
 
 .pokemon-move-characteristic{
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  align-items: center;
+  width:100%
 }
 
 .logo-type{
@@ -466,5 +480,21 @@ font-weight: 700;
 }
 
 .logo-type.dragon{
-  background-color: #78c850;
+  background-color: #7038f8;
+}
+
+.logo-type.flying {
+  background-color: #a890f0;
+}
+
+.logo-type.ghost {
+  background-color: #705898;
+}
+
+.logo-type.steel{
+  background-color: #6badc9;
+}
+
+.logo-type.dark{
+  background-color: #4f4747;
 }

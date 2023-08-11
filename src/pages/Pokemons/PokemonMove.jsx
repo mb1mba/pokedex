@@ -22,20 +22,23 @@ function PokemonMove(){
         loadPokemonMoves()
     }, [currentPokemon.id])
 
-    
-
     return (
         <div className="moves">
-          {pokemonMoves.map(move => 
+          {pokemonMoves.map(move =>
+          <> 
           <div className={`pokemon-moves-details ${move.type.name}`}>
-             <p className="pokemon-move">{move.name}</p>
+            <div className="move-desc">
+                <p className="pokemon-move">{move.name}</p>
+            </div>
              <div className="pokemon-move-characteristic">
-                <p>{move.accuracy}</p>
-                <p>{move.power}</p>
-             </div>
-             <img src={`../../${move.type.name}.svg`} className={`logo-type ${move.type.name}`}></img>
+             <p className="move-description">{move?.["flavor_text_entries"][0]?.["flavor_text"]}</p>
+                <p>{move.accuracy ? move.accuracy : "-"}</p>
+                <p>{move.power ? move.power : "-"}</p>
+                <img src={`../../${move.type.name}.svg`} className={`logo-type ${move.type.name}`}></img>
+             </div>  
           </div>
-
+          <hr/>
+        </>
             )}
         </div>
     )
