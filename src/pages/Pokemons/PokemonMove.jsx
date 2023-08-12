@@ -7,8 +7,9 @@ import { getPokemonMoves } from "../../api";
 function PokemonMove(){
     const currentPokemon = useOutletContext()
     const [pokemonMoves, setPokemonMoves] = useState([])
-    
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
+        setLoading(true)
         async function loadPokemonMoves(){
             try{
                 const urls = currentPokemon.moves.map(move => move.move.url)
@@ -17,14 +18,22 @@ function PokemonMove(){
                 setPokemonMoves(data)
             } catch(err) {
                 console.log(err)
+            } finally {
+                setLoading(false)
             }
         }
         loadPokemonMoves()
     }, [currentPokemon.id])
+    if (loading) {
+        return (
+            <div className="wrapper">
+                <div className="pokeball">
+                </div>
+            </div>)
+    }
 
     return (
         <div className="datas-container">
-            
             <div className="moves">
             {pokemonMoves.map(move =>
             <div data-aos="fade-up"> 

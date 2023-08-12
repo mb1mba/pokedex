@@ -34,7 +34,8 @@ function PokemonDetail(){
           ground: "#e0c068",
           electric: "#e7e700",
           rock: "#b8a038",
-          fairy: "#ffaaff"
+          fairy: "#ffaaff",
+          ghost: "#705898"
         };
       
         return types && types[0] ? typeColors[types[0]] : "";
@@ -60,6 +61,7 @@ function PokemonDetail(){
                 hasPreviousPokemon={hasPreviousPokemon}
                 nextPokemonImage={nextPokemonImage}
                 prevPokemonImage={prevPokemonImage}
+                id={id}
             />
             <Navbar 
                 currentPokemon={currentPokemon}

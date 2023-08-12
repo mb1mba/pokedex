@@ -1,11 +1,15 @@
 
+
+
 :root {
   --bodyColor: "#000000";
 }
 body {
   background-color: var(--bodyColor);
 }
-
+#root{
+  overflow: hidden;
+}
 .container{
   display: flex;
   justify-content: space-around;
@@ -243,9 +247,10 @@ body {
 }
 
 .pokemon-detail-container{
-  padding: 20px;
   max-width: 730px;
+  height: 330px;
   position: relative;
+  padding: 20px;
 }
 
 .pokemon-name-id-container{
@@ -264,6 +269,8 @@ body {
   color:#fff;
   font-weight: 700;
   margin-top: 25px;
+  width: 100%;
+  max-height: 250px;
 }
 
 .pokemon-id{
@@ -291,7 +298,7 @@ body {
   max-width: 730px;
   min-height: 65%;
   padding: 5px 20px;
-  min-width: 100%
+  min-width: 100%;
 }
 
 .nav-link-container{
@@ -325,28 +332,25 @@ a{
 }
 
 .pokemon-img-data{
-  max-width: 240px;
+  width: 240px;
   position: absolute;
-  z-index: 10;
-}
-
-.next-pokemon{
-  position: absolute;
-  left: 315px;
-  top: 9.5rem;
-  z-index: 10;
+  z-index: 20;
+  top: 7.6rem
 }
 
 .queue {
+  top: 7.5rem;
+  position: absolute;
   width: 200px;
   filter: brightness(0) opacity(0.7) contrast(0.5) drop-shadow(0 0 0 black);
-  
+}
+
+.next-pokemon{
+  left: 300px;
 }
 
 .prev-pokemon{
-  position:absolute;
-  right: 320px;
-  top: 45%
+  right: 300px
 }
 
 .datas-container{

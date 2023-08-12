@@ -36,6 +36,8 @@ function PokemmonDataContext({children}){
     }
         loadPokedex();
     }, [pokemonsUrl]);
+    
+
   
     return (
         <PokemonContext.Provider value={{pokemonsData, pokemonDescription, loading}}>

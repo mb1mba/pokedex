@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Pokemon({currentPokemon, image, pokemonSpecies, types, hasNextPokemon, hasPreviousPokemon, nextPokemonImage, prevPokemonImage}){
-    
+
     return (
-        <div className="pokemon-detail-container" key={currentPokemon.id}>
+        <>
+            <div className="pokemon-detail-container" key={currentPokemon.id}>
                 <Link to="/pokemons"> &larr;</Link>
                 <div className="header-detail">
-                    <div className="header-txt">
+    
                         <div className="pokemon-name-id-container">
                             <h1>{currentPokemon.name}</h1>
                             <p className="pokemon-id">{`#00${currentPokemon.id}`}</p>
@@ -24,15 +25,23 @@ export default function Pokemon({currentPokemon, image, pokemonSpecies, types, h
                             <p className="pokemon-species">{pokemonSpecies}</p>
                         </div>
                         
-                        <div className="pokemon-img-container">
+                        <div className="pokemon-img-container" id="current-pokemon-image">
                             <img className="pokemon-img-data" src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
                         </div>
-                         {hasNextPokemon && <Link className="pokemon-queue" to={`/pokemons/${currentPokemon.id + 1}`}><img  src={nextPokemonImage} className="queue next-pokemon"></img></Link>}
-                        {hasPreviousPokemon && <Link className="pokemon-queue" to={`/pokemons/${currentPokemon.id - 1}`}><img src={prevPokemonImage}  className=" queue prev-pokemon"></img></Link>}
-
-                    </div>
+                
+                <div className="pokemon-queue">
+                    {hasNextPokemon && 
+                        <Link to={`/pokemons/${currentPokemon.id + 1}`}>
+                            <img  src={nextPokemonImage} className="queue next-pokemon"></img>
+                        </Link>}
+                    {hasPreviousPokemon && 
+                        <Link to={`/pokemons/${currentPokemon.id - 1}`}>
+                            <img src={prevPokemonImage}  className=" queue prev-pokemon"></img>
+                        </Link>}
+                </div>
                 </div>
             </div>
+        </>
     )
 }

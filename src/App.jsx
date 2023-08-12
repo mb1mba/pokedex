@@ -44,7 +44,6 @@ function App() {
               <Route path="evolution" element={<Evolution />}/>
               <Route path="moves" element={<PokemonMove />}/>
             </Route>
-
           </Routes>
         </BrowserRouter>
       </PokemonSearchProvider>

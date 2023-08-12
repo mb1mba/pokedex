@@ -6,8 +6,8 @@ import { PokemonSearchContext } from "../context/PokemonSearchContext";
 
 function Pokedex(){
 
-    const { searchState } = useContext(PokemonSearchContext)
-    const { pokemonsData } = useContext(PokemonContext)
+    const { searchState } = useContext(PokemonSearchContext);
+    const { pokemonsData } = useContext(PokemonContext);
     const [displayedPokemon, setDisplayedPokemon] = useState(pokemonsData); 
     setBodyColor({color:" #fff"})
 
