@@ -13,7 +13,6 @@ function PokemonMove(){
         async function loadPokemonMoves(){
             try{
                 const urls = currentPokemon.moves.map(move => move.move.url)
-                console.log(urls)
                 const data = await Promise.all(urls.map(url => getPokemonMoves(url)))
                 setPokemonMoves(data)
             } catch(err) {

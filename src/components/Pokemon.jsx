@@ -1,8 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import "animate.css"
 
-export default function Pokemon({currentPokemon, image, pokemonSpecies, types, hasNextPokemon, hasPreviousPokemon, nextPokemonImage, prevPokemonImage}){
+export default function Pokemon({
+    currentPokemon, 
+    image, 
+    pokemonSpecies, 
+    types, 
+    hasNextPokemon, 
+    hasPreviousPokemon, 
+    nextPokemonImage, 
+    prevPokemonImage,}){
 
+    const [transition, setTransition] = useState("")
+
+    const handleNextImageClick = () => {
+        setTransition("animate__animated animate__fadeInRight");
+      }
+    
+      const handlePrevImageClick = () => {
+        setTransition("animate__animated animate__fadeInLeft");
+      };
+    
     return (
         <>
             <div className="pokemon-detail-container" key={currentPokemon.id}>
@@ -26,18 +45,25 @@ export default function Pokemon({currentPokemon, image, pokemonSpecies, types, h
                         </div>
                         
                         <div className="pokemon-img-container" id="current-pokemon-image">
-                            <img className="pokemon-img-data" src={image}></img>
+                            <img className={`pokemon-img-data ${transition}`} src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
                         </div>
                 
                 <div className="pokemon-queue">
                     {hasNextPokemon && 
                         <Link to={`/pokemons/${currentPokemon.id + 1}`}>
-                            <img  src={nextPokemonImage} className="queue next-pokemon"></img>
+                            <img onClick={handleNextImageClick} 
+                            src={nextPokemonImage} 
+                            className={`queue next-pokemon ${transition}`}
+                            ></img>
                         </Link>}
                     {hasPreviousPokemon && 
                         <Link to={`/pokemons/${currentPokemon.id - 1}`}>
-                            <img src={prevPokemonImage}  className=" queue prev-pokemon"></img>
+                            <img onClick={handlePrevImageClick} 
+                            src={prevPokemonImage}  
+                            className={`queue prev-pokemon ${transition}`}
+                            >
+                            </img>
                         </Link>}
                 </div>
                 </div>

@@ -7,20 +7,25 @@ import Navbar from "../../components/Navbar";
 
 function PokemonDetail(){
     const {pokemonsData} = useContext(PokemonContext)
+
     const {id} = useParams()
     const currentPokemon = pokemonsData[id - 1]
-    const nextPokemon = pokemonsData[currentPokemon?.id]
-    const previousPokemon = pokemonsData[currentPokemon?.id-2]
-    const [loading, setLoading] = useState(false)
-    const [pokemonSpecies, setPokemonSpecies] = useState(null)
+
     const nextPokemonId = currentPokemon && currentPokemon.id + 1;
     const hasNextPokemon = nextPokemonId <= 150;
+    const nextPokemon = hasNextPokemon ? pokemonsData[currentPokemon?.id] : null
+
     const prevPokemonId = currentPokemon?.id - 1
     const hasPreviousPokemon = prevPokemonId >= 1
+    const previousPokemon = hasPreviousPokemon ? pokemonsData[currentPokemon?.id-2] : null
+    
+    const [pokemonSpecies, setPokemonSpecies] = useState(null)
+
     const types = currentPokemon && currentPokemon.types.map(typeObj => typeObj.type.name)
     const image = currentPokemon && currentPokemon.sprites?.other?.["official-artwork"]?.front_default
     const nextPokemonImage = nextPokemon && nextPokemon.sprites?.other?.["official-artwork"]?.front_default
     const prevPokemonImage = previousPokemon && previousPokemon.sprites?.other?.["official-artwork"]?.front_default
+    
     const bgColor = () => {
         const typeColors = {
           grass: "#78c850",
@@ -42,14 +47,6 @@ function PokemonDetail(){
     };
 
     setBodyColor({color: bgColor()})
-    console.log(nextPokemonImage)
-    if (loading) {
-        return (
-            <div className="wrapper">
-                <div className="pokeball">
-                </div>
-            </div>)
-    }
 
     return (currentPokemon &&  
         <>
@@ -61,8 +58,9 @@ function PokemonDetail(){
                 hasPreviousPokemon={hasPreviousPokemon}
                 nextPokemonImage={nextPokemonImage}
                 prevPokemonImage={prevPokemonImage}
-                id={id}
+                pokemonsData={pokemonsData}
             />
+
             <Navbar 
                 currentPokemon={currentPokemon}
             />
