@@ -24,7 +24,7 @@ function Evolution(){
     
     return (
         <div className="datas-container">
-            {pokemonEvolution && <EvolutionChain chain={pokemonEvolution} />}
+            Evolutions goes here
         </div>
     )
 }
