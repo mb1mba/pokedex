@@ -1,8 +1,23 @@
-# React + Vite
+<h1>React Pokedex</h1
+                   
+Pokedex app built with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>Todos</h1>
 
-Currently, two official plugins are available:
+- [x] Home
+- [x] Pokedex
+- [ ] Pokemon type filter 
+- [x] Pokemon detail - About
+- [x] Pokemon detail - Base Stats
+- [ ] Pokemon detail - Evolution Chain
+- [x] Pokemon detail - Moves
+- [x] Moves
+- [ ] Moves detail
+- [ ] Moves  type filter 
+- [ ] Items
+- [ ] Items details
+- [ ] Fetching animation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h1>Thanks</h1>
+
+- <a href="https://dribbble.com/saepulnahwan23">Saepul Nahwan</a> for his <a href="https://dribbble.com/shots/6545819-Pokedex-App">Pokemon app design</a> 
