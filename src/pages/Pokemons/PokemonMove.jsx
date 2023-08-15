@@ -4,6 +4,7 @@ import { getPokemonMoves } from "../../api";
 import Move from "../../components/Move";
 function PokemonMove(){
     const currentPokemon = useOutletContext()
+
     const [pokemonMoves, setPokemonMoves] = useState([])
     const [loading, setLoading] = useState(false)
     
@@ -36,11 +37,7 @@ function PokemonMove(){
             <div className="moves">
             {pokemonMoves.map(move =>
                 <Move 
-                    type={move.type.name}
-                    name={move.name}
-                    description={move?.["flavor_text_entries"][0]?.["flavor_text"]}
-                    accuracy={move.accuracy}
-                    power={move.power}
+                move={move}
                 />
                 )}
             </div>

@@ -43,13 +43,15 @@ function App() {
                     <Route path="abilities" element={<Abilities />} />
                 </Route>
                 
-                <Route path="pokemons/:id" element={<PokemonDetail/>}>
-                  <Route index element={< About />}  />
-                  <Route path="stats" element={<Stats />}/>
-                  <Route path="evolution" element={<Evolution />}/>
-                  <Route path="moves" element={<PokemonMove />}/>
+                <Route path="pokemons/:id" element={
+                  <PokedexProvider>
+                    <PokemonDetail />
+                  </PokedexProvider>}>
+                     <Route index element={< About />}  />
+                     <Route path="stats" element={<Stats />}/>
+                     <Route path="evolution" element={<Evolution />}/>
+                     <Route path="moves" element={<PokemonMove />}/>
                 </Route>
-
               </Routes>
           </BrowserRouter>
         </PokemonSearchProvider>

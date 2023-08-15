@@ -6,6 +6,7 @@ import Pokemon from "../../components/Pokemon";
 import Navbar from "../../components/Navbar";
 
 function PokemonDetail(){
+
     const {pokemonsData} = useContext(PokedexContext)
 
     const {id} = useParams()

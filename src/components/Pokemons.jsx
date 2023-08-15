@@ -12,7 +12,7 @@ export default function Pokemons({pokemon}){
             <h2 className="pokemon-name">{pokemon.name}</h2>
             <div className="pokemon-types">
                 {types.map(type => 
-                    <p className="pokemon-type">
+                    <p key={type} className="pokemon-type">
                       {type}  
                     </p>
                     )}

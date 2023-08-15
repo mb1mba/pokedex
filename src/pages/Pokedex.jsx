@@ -20,7 +20,7 @@ function Pokedex(){
     }, [searchState, pokemonsData]);
     
     const pokedex = displayedPokemon.map(pokemon =>
-        <div data-aos="fade-up">
+        <div key={pokemon.name}data-aos="fade-up">
             <Pokemons 
                 pokemon={pokemon}
                 key={pokemon.id}

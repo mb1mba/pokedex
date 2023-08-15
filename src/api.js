@@ -1,5 +1,7 @@
+const BASE_URL = 'https://pokeapi.co/api/v2/'
+
 export async function getDatas() {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=150`)
+    const res = await fetch(`${BASE_URL}pokemon?offset=0&limit=150`)
     const data = await res.json()
     return data.results
 }
@@ -11,7 +13,7 @@ export async function getPokemons(url) {
 }
 
 export async function getPokemonsDescription(id){
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
+    const res = await fetch(`${BASE_URL}pokemon-species/${id}/`)
     const data = await res.json()
     return data
 }
@@ -23,7 +25,7 @@ export async function getPokemonMoves(url){
 }
 
 export async function getPokemonEvolution(id){
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
+    const res = await fetch(`${BASE_URL}pokemon-species/${id}/`)
     const data = await res.json()
     const url = data["evolution_chain"].url
     const pokemonEvolutionChain = await fetch(url)
@@ -31,7 +33,7 @@ export async function getPokemonEvolution(id){
 }
 
 export async function getMovesData(){
-    const res = await fetch(`https://pokeapi.co/api/v2/move?offset=0&limit=300`)
+    const res = await fetch(`${BASE_URL}move?offset=0&limit=300`)
     const data = await res.json()
     return data.results
 }
@@ -44,14 +46,14 @@ export async function getMoves(url){
 }
 
 export async function getItems() {
-    const res = await fetch(`https://pokeapi.co/api/v2/move/?offset=0&limit=200`)
+    const res = await fetch(`${BASE_URL}move/?offset=0&limit=200`)
     const data = await res.json()
     console.log(data)
     return data
 }
 
 export async function getAbilities() {
-    const res = await fetch(`https://pokeapi.co/api/v2/item/?offset=0&limit=200"`)
+    const res = await fetch(`${BASE_URL}item/?offset=0&limit=200"`)
     const data = await res.json()
     console.log(data)
     return data

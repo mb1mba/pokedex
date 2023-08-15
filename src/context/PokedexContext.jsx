@@ -1,10 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getPokemons, getDatas } from "../api";
-import { useLocation } from "react-router";
 const PokedexContext = createContext();
 
 function PokedexProvider({ children }) {
-    
+
   const [pokemonsData, setPokemonsData] = useState([]);
 
   useEffect(() => {
