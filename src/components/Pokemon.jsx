@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import "animate.css"
 
 export default function Pokemon({
     currentPokemon, 
@@ -36,7 +35,7 @@ export default function Pokemon({
                         <div className="pokemon-species-type-container">
                             <div className="pokemon-type-container">
                                 {types.map(type => 
-                                    <p className="pokemon-type">
+                                    <p key={type} className="pokemon-type">
                                         {type}  
                                     </p>
                                 )}

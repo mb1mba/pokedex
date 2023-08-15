@@ -1,13 +1,14 @@
 import React, { useEffect, useState,useContext } from "react";
 import setBodyColor from "../setBodyColor";
-import { PokemonContext } from "../context/PokemonDataContext";
 import Pokemons from "../components/Pokemons";
 import { PokemonSearchContext } from "../context/PokemonSearchContext";
+import { PokedexContext } from "../context/PokedexContext";
 
 function Pokedex(){
 
     const { searchState } = useContext(PokemonSearchContext);
-    const { pokemonsData } = useContext(PokemonContext);
+    const { pokemonsData } = useContext(PokedexContext);
+    
     const [displayedPokemon, setDisplayedPokemon] = useState(pokemonsData); 
     setBodyColor({color:" #fff"})
 
@@ -35,4 +36,4 @@ function Pokedex(){
         
 }
 
-export default Pokedex
+export default React.memo(Pokedex)

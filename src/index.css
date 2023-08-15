@@ -355,7 +355,6 @@ a{
 
 .datas-container{
   animation: showup 1s;
-  margin-top: 40px;
 }
 
 @keyframes showup {

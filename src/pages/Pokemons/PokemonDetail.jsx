@@ -1,12 +1,12 @@
 import React, {useState, useContext} from "react";
 import { useParams } from "react-router-dom";
 import setBodyColor from "../../setBodyColor";
-import { PokemonContext } from "../../context/PokemonDataContext";
+import { PokedexContext } from "../../context/PokedexContext";
 import Pokemon from "../../components/Pokemon";
 import Navbar from "../../components/Navbar";
 
 function PokemonDetail(){
-    const {pokemonsData} = useContext(PokemonContext)
+    const {pokemonsData} = useContext(PokedexContext)
 
     const {id} = useParams()
     const currentPokemon = pokemonsData[id - 1]

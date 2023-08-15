@@ -20,7 +20,7 @@ export default function Pokemons({pokemon}){
         </div>
 
         <div>
-            <img className="pokemon-img" src={image}></img>
+            <img className="pokemon-img" loading="lazy" src={image}></img>
         </div>
     </Link>
 
