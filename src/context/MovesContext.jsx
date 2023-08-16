@@ -1,38 +1,15 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getMoves, getMovesData } from "../api";
+import { useContextProvider } from "../utils/contextUtils";
 
 const MovesContext = createContext();
 
 function MovesProvider({ children }) {
-  const [moves, setMoves] = useState([]);
-  const [loading, setLoading] = useState(false)
-  
-  useEffect(() => {
-    setLoading(true)
-    async function fetchData() {
-      try {
-        const moveData = await getMovesData();
-        const moveUrls = moveData.map(move => move.url);
-        const moves = await Promise.all(moveUrls.map(moveUrl => getMoves(moveUrl)));
-        setMoves(moves);
-      } catch (err) {
-        console.log(err);
-      } finally{
-        setLoading(false)
-      }
-    }
-    fetchData();
-  }, []);
 
-  if(loading){
-    return (
-      <div className="wrapper">
-          <div className="pokeball">
-          </div>
-      </div>)
-  }
+  const { data } = useContextProvider(getMovesData, getMoves)
+
   return (
-    <MovesContext.Provider value={{ moves }}>
+    <MovesContext.Provider value={{ data }}>
       {children}
     </MovesContext.Provider>
   );

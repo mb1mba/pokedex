@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Item({item}){
-    const name = item.name
-    const image = item.sprites.default
-    const description = item["flavor_text_entries"][0].text
+function Item({element}){
+    const name = element.name
+    const image = element.sprites.default
+    const description = element["flavor_text_entries"][0].text
     
     return(
         <div className="datas-container">

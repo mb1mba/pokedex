@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Ability({ability}){
-   const name = ability.name;
-   const description = ability["flavor_text_entries"][0]["flavor_text"];
-   const effect = ability["effec_entries"]?.[0].effect
+function Ability({element}){
+   const name = element?.name;
+   const description = element?.["flavor_text_entries"]?.[0]["flavor_text"];
+   const effect = element?.["effec_entries"]?.[0].effect
+
     return(
         <div className="datas-container">
         <Link key={name} to={name}className="moves">

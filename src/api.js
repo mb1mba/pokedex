@@ -59,6 +59,9 @@ export async function getItems(url){
 
 export async function getAbilitiesData() {
     const res = await fetch(`${BASE_URL}ability/?offset=0&limit=200"`)
+    if (!res.ok) {
+        throw new Error('Request failed with status: ' + res.status);
+      }
     const data = await res.json()
     return data.results
 }

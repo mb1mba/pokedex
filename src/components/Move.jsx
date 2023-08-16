@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Move({move}){
+function Move({element}){
 
-    const name = move?.name
-    const type = move?.type.name
-    const description = move?.["flavor_text_entries"][0]?.["flavor_text"]
-    const power = move?.power
-    const accuracy = move?.accuracy
+    const name = element?.name
+    const type = element?.type.name
+    const description = element?.["flavor_text_entries"][0]?.["flavor_text"]
+    const power = element?.power
+    const accuracy = element?.accuracy
 
     return(
         <div className="datas-container">

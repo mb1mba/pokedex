@@ -1,38 +1,14 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext } from "react";
 import { getItems, getItemsData } from "../api";
+import { useContextProvider } from "../utils/contextUtils";
 
 const ItemsContext = createContext();
 
 function ItemsProvider({ children }) {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false)
-  
-  useEffect(() => {
-    setLoading(true)
-    async function fetchData() {
-      try {
-        const itemsData = await getItemsData();
-        const itemsUrl = itemsData.map(item => item.url);
-        const items = await Promise.all(itemsUrl.map(itemsUrl => getItems(itemsUrl)));
-        setItems(items);
-      } catch (err) {
-        console.log(err);
-      } finally{
-        setLoading(false)
-      }
-    }
-    fetchData();
-  }, []);
+  const { data } = useContextProvider(getItemsData, getItems)
 
-  if(loading){
-    return (
-      <div className="wrapper">
-          <div className="pokeball">
-          </div>
-      </div>)
-  }
   return (
-    <ItemsContext.Provider value={{ items }}>
+    <ItemsContext.Provider value={{ data }}>
       {children}
     </ItemsContext.Provider>
   );

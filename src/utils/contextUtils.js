@@ -9,8 +9,9 @@ export function useContextProvider(fetchFunction, transformFunction) {
     async function fetchData() {
       try {
         const fetchedData = await fetchFunction();
-        const transformedData = await Promise.all(fetchedData.map(url => transformFunction(url)))
+        const transformedData = await Promise.all(fetchedData.map(element => transformFunction(element.url)))
         setData(transformedData);
+        console.log(data)
       } catch (error) {
         console.error(error);
       } finally {

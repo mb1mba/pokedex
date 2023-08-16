@@ -1,23 +1,11 @@
-import React, {useContext, useState, useEffect} from "react";
+import React from "react";
 import { ItemsContext } from "../context/ItemsContext";
-import { PokemonSearchContext } from "../context/PokemonSearchContext";
 import Item from "../components/Item";
+import GenericList from "../components/GenericList";
+
 function Items(){
-    const { items } = useContext(ItemsContext)
-    const { searchState } = useContext(PokemonSearchContext);
-    const [displayedMoves, setDisplayedMoves] = useState([])
-
-    useEffect(() => {
-        const filteredResults = searchState ? items.filter(move =>
-            move.name.toLowerCase().includes(searchState.value.toLowerCase())
-        ) : items;
-        setDisplayedMoves(filteredResults);
-    }, [searchState, items]);
-
     return(
-        <> 
-          {displayedMoves.map(item => <Item item={item}/>)}
-        </>
+        <GenericList context={ItemsContext} DisplayComponent={Item} />
     )
 }
 

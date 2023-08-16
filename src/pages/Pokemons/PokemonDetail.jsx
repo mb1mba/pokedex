@@ -7,18 +7,18 @@ import Navbar from "../../components/Navbar";
 
 function PokemonDetail(){
 
-    const {pokemonsData} = useContext(PokedexContext)
+    const {data} = useContext(PokedexContext)
 
     const {id} = useParams()
-    const currentPokemon = pokemonsData[id - 1]
+    const currentPokemon = data[id - 1]
 
     const nextPokemonId = currentPokemon && currentPokemon.id + 1;
     const hasNextPokemon = nextPokemonId <= 150;
-    const nextPokemon = hasNextPokemon ? pokemonsData[currentPokemon?.id] : null
+    const nextPokemon = hasNextPokemon ? data[currentPokemon?.id] : null
 
     const prevPokemonId = currentPokemon?.id - 1
     const hasPreviousPokemon = prevPokemonId >= 1
-    const previousPokemon = hasPreviousPokemon ? pokemonsData[currentPokemon?.id-2] : null
+    const previousPokemon = hasPreviousPokemon ? data[currentPokemon?.id-2] : null
     
     const [pokemonSpecies, setPokemonSpecies] = useState(null)
 
@@ -59,7 +59,7 @@ function PokemonDetail(){
                 hasPreviousPokemon={hasPreviousPokemon}
                 nextPokemonImage={nextPokemonImage}
                 prevPokemonImage={prevPokemonImage}
-                pokemonsData={pokemonsData}
+                data={data}
             />
 
             <Navbar 

@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { PokemonSearchContext } from "../context/PokemonSearchContext";
 
 function GenericList({ context, DisplayComponent }) {
+
   const { data } = useContext(context);
   const { searchState } = useContext(PokemonSearchContext);
   const [displayedData, setDisplayedData] = useState(data);
@@ -18,8 +19,8 @@ function GenericList({ context, DisplayComponent }) {
 
   return (
     <>
-      {displayedData.map(item => (
-        <DisplayComponent key={item.name} item={item} />
+      {displayedData.map(element => (
+        <DisplayComponent key={element.name} element={element} />
       ))}
     </>
   );

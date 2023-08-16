@@ -6,13 +6,10 @@ const AbilitiesContext = createContext();
 
 function AbilitiesProvider({ children }) {
 
-  const { data: abilities  } = useContextProvider(
-    getAbilitiesData,
-    ability => getAbilities(ability.url)
-  );
+  const { data } = useContextProvider(getAbilitiesData, getAbilities)
 
   return (
-    <AbilitiesContext.Provider value={{ abilities }}>
+    <AbilitiesContext.Provider value={{ data }}>
       {children}
     </AbilitiesContext.Provider>
   );
