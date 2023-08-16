@@ -1,12 +1,12 @@
 import React from "react";
-import { getAbilities } from "../api";
+import GenericList from "../components/GenericList";
+import { AbilitiesContext } from "../context/AbilitiesContext";
+import Ability from "../components/Ability";
 
-function Abilities(){
-    return(
-        <>
-            <h1>Abilities goes here</h1>
-        </>
-    )
+function Abilities() {
+  return (
+    <GenericList context={AbilitiesContext} DisplayComponent={Ability} />
+  );
 }
 
-export default Abilities
+export default React.memo(Abilities);

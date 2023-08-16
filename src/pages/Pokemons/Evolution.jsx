@@ -20,8 +20,6 @@ function Evolution(){
         loadPokemonEvolutions()
     }, [])    
 
-    console.log(pokemonEvolution)
-    
     return (
         <div className="datas-container">
             Evolutions goes here

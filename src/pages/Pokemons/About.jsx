@@ -1,4 +1,4 @@
-import React, { useState }from "react";
+import React, { useState, useEffect }from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { getPokemonsDescription } from "../../api";
 
@@ -11,7 +11,7 @@ function About(){
     const {id} = useParams()
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         async function loadPokemonDescrition(){
             const data = await getPokemonsDescription(pokemon.id)
             setPokemonDescription(data);

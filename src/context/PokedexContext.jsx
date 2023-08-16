@@ -5,8 +5,9 @@ const PokedexContext = createContext();
 function PokedexProvider({ children }) {
 
   const [pokemonsData, setPokemonsData] = useState([]);
-
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
+    setLoading(true)
     async function fetchData() {
       try {
         const pokemonUrls = await getDatas();
@@ -14,11 +15,20 @@ function PokedexProvider({ children }) {
         setPokemonsData(pokemonData);
       } catch (err) {
         console.log(err);
+      } finally{
+        setLoading(false)
       }
     }
     fetchData();
-    
   }, []);
+
+  if(loading){
+    return (
+      <div className="wrapper">
+          <div className="pokeball">
+          </div>
+      </div>)
+  }
 
   return (
     <PokedexContext.Provider value={{ pokemonsData }}>

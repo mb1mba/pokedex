@@ -45,16 +45,26 @@ export async function getMoves(url){
     return data
 }
 
-export async function getItems() {
-    const res = await fetch(`${BASE_URL}move/?offset=0&limit=200`)
+export async function getItemsData() {
+    const res = await fetch(`${BASE_URL}item/?offset=0&limit=200`)
     const data = await res.json()
-    console.log(data)
+    return data.results
+}
+
+export async function getItems(url){
+    const res = await fetch(url)
+    const data = await res.json()
     return data
 }
 
-export async function getAbilities() {
-    const res = await fetch(`${BASE_URL}item/?offset=0&limit=200"`)
+export async function getAbilitiesData() {
+    const res = await fetch(`${BASE_URL}ability/?offset=0&limit=200"`)
     const data = await res.json()
-    console.log(data)
+    return data.results
+}
+
+export async function getAbilities(url){
+    const res = await fetch(url)
+    const data = await res.json()
     return data
 }

@@ -8,7 +8,7 @@ function Pokedex(){
 
     const { searchState } = useContext(PokemonSearchContext);
     const { pokemonsData } = useContext(PokedexContext);
-    
+
     const [displayedPokemon, setDisplayedPokemon] = useState(pokemonsData); 
     setBodyColor({color:" #fff"})
 
@@ -20,7 +20,7 @@ function Pokedex(){
     }, [searchState, pokemonsData]);
     
     const pokedex = displayedPokemon.map(pokemon =>
-        <div key={pokemon.name}data-aos="fade-up">
+        <div key={pokemon.name} data-aos="fade-up">
             <Pokemons 
                 pokemon={pokemon}
                 key={pokemon.id}

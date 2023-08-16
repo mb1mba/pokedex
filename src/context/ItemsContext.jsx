@@ -1,20 +1,20 @@
 import React, { createContext, useState, useEffect } from "react";
-import { getMoves, getMovesData } from "../api";
+import { getItems, getItemsData } from "../api";
 
-const MovesContext = createContext();
+const ItemsContext = createContext();
 
-function MovesProvider({ children }) {
-  const [moves, setMoves] = useState([]);
+function ItemsProvider({ children }) {
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false)
   
   useEffect(() => {
     setLoading(true)
     async function fetchData() {
       try {
-        const moveData = await getMovesData();
-        const moveUrls = moveData.map(move => move.url);
-        const moves = await Promise.all(moveUrls.map(moveUrl => getMoves(moveUrl)));
-        setMoves(moves);
+        const itemsData = await getItemsData();
+        const itemsUrl = itemsData.map(item => item.url);
+        const items = await Promise.all(itemsUrl.map(itemsUrl => getItems(itemsUrl)));
+        setItems(items);
       } catch (err) {
         console.log(err);
       } finally{
@@ -32,10 +32,10 @@ function MovesProvider({ children }) {
       </div>)
   }
   return (
-    <MovesContext.Provider value={{ moves }}>
+    <ItemsContext.Provider value={{ items }}>
       {children}
-    </MovesContext.Provider>
+    </ItemsContext.Provider>
   );
 }
 
-export { MovesContext, MovesProvider };
+export { ItemsContext, ItemsProvider };
