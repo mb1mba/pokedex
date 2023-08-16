@@ -7,6 +7,7 @@ export default function Pokemons({element}){
     const image = element.sprites && element.sprites.other["official-artwork"]["front_default"]
     
     return (
+        
     <Link to={`${element.id}`} className={`pokemon-container ${styles}`} key={element.id}>
         <div className="pokemon-data" key={element.id}>
             <h2 className="pokemon-name">{element.name}</h2>

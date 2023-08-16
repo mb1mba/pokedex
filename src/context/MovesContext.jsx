@@ -6,7 +6,16 @@ const MovesContext = createContext();
 
 function MovesProvider({ children }) {
 
-  const { data } = useContextProvider(getMovesData, getMoves)
+  const { data, loading } = useContextProvider(getMovesData, getMoves)
+
+  
+  if(loading){
+    return (
+      <div className="wrapper">
+          <div className="pokeball">
+          </div>
+      </div>)
+  }
 
   return (
     <MovesContext.Provider value={{ data }}>

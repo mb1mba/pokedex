@@ -6,8 +6,16 @@ const PokedexContext = createContext();
 
 function PokedexProvider({ children }) {
 
-  const { data } = useContextProvider(getDatas, getPokemons)
+  const { data, loading } = useContextProvider(getDatas, getPokemons)
 
+  if(loading){
+    return (
+      <div className="wrapper">
+          <div className="pokeball">
+          </div>
+      </div>)
+  }
+  
   return (
     <PokedexContext.Provider value={{ data }}>
       {children}

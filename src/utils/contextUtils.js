@@ -11,7 +11,6 @@ export function useContextProvider(fetchFunction, transformFunction) {
         const fetchedData = await fetchFunction();
         const transformedData = await Promise.all(fetchedData.map(element => transformFunction(element.url)))
         setData(transformedData);
-        console.log(data)
       } catch (error) {
         console.error(error);
       } finally {
@@ -22,7 +21,7 @@ export function useContextProvider(fetchFunction, transformFunction) {
   }, []);
 
   return(
-   { data }
+   { data, loading }
   )
   
 }
