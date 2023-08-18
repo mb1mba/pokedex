@@ -63,6 +63,15 @@ function About(){
                         <p>{pokemon["base_experience"]}</p>
                     </div>
                 </div>
+
+                <div className="pokemon-section">
+                    <h3>Abilities</h3>
+                    <div className="pokemon-elements">
+                    {pokemon.abilities.map(ability => 
+                        <p className="elements-title abilities" >{ability.ability.name}</p>
+                    )}
+                    </div>
+                </div>
         </div>
     )
 }

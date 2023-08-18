@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function Move({element}){
 
     const name = element?.name
-    const type = element?.type.name
-    const description = element?.["flavor_text_entries"][0]?.["flavor_text"]
+    const type = element?.type?.name
+    const description = element?.["flavor_text_entries"]?.[0]?.["flavor_text"]
     const power = element?.power
     const accuracy = element?.accuracy
 
-    return(
+    return(  
         <div className="datas-container">
                 <Link key={name} to={name}className="moves">
                     <div data-aos="fade-up"> 

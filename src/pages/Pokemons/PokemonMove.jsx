@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useOutletContext } from "react-router-dom";
 import { getPokemonMoves } from "../../api";
 import Move from "../../components/Move";
+
 function PokemonMove(){
     const currentPokemon = useOutletContext()
 
@@ -35,9 +36,9 @@ function PokemonMove(){
     return (
         <div className="datas-container">
             <div className="moves">
-            {pokemonMoves.map(move =>
+            {pokemonMoves.map(element =>
                 <Move 
-                move={move}
+                element={element}
                 />
                 )}
             </div>

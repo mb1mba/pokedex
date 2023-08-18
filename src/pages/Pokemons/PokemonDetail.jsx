@@ -7,8 +7,8 @@ import Navbar from "../../components/Navbar";
 
 function PokemonDetail(){
 
-    const {data} = useContext(PokedexContext)
-
+    const { data } = useContext(PokedexContext)
+    console.log(data)
     const {id} = useParams()
     const currentPokemon = data[id - 1]
 

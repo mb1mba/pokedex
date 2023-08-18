@@ -1,29 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Item({element}){
-    const name = element.name
-    const image = element.sprites.default
-    const description = element["flavor_text_entries"][0].text
-    
-    return(
-        <div className="datas-container">
-        <Link key={name} to={name}className="moves">
-            <div data-aos="fade-up"> 
-                <div className={`item-container`}>
-                    <div className="item-desc">
-                        <p className="item">{name}</p>
-                    </div>
+    console.log(element)
+    const name = element.name;
+    const image = element.sprites.default;
+    const description = element["flavor_text_entries"][0].text;
+    const cost = element.cost;
+    const category = element.category.name;
 
-                    <div className="pokemon-move-characteristic">
-                        <p className="move-description">{description}</p>
-                        <img loading="lazy" src={image}></img>
-                        </div>  
+    return(
+        <>
+            <div className="datas-container">
+                <div data-aos="fade-up">
+                    <div className="item-container">
+
+                        <div className="item-data">
+                            <div className="item-image-container">
+                                <img className="item-image" src={image}></img>
+                            </div>
+
+                            <div className="item-datas">
+                                <h3>{name}<span className="item-category">{category}</span></h3>
+                                <div className="cost-container">
+                                    <p className="item-cost">{cost ? cost : "Not for sell"}</p>
+                                    {cost ? <img className="pokedollar" src="../pokedollar.svg"></img> : null}
+                                </div>
+                                <p>{description}</p>
+                            </div>
+                        </div>
                     </div>
-                    <hr/>
                 </div>
-        </Link> 
-        </div>
+            </div>
+        </>
+        
     )
 }
 

@@ -387,8 +387,25 @@ font-weight: 700;
   max-width: 55%;
 }
 
+
 .elements-title{
   color: grey
+}
+
+.elements-title.abilities{
+  color:#161616;
+  background-color:#c9c9c9;
+  min-width: 10rem;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-right: 1rem;
+  font-weight: 700;
+  border-radius: 0.3rem;
+}
+
+.pokemon-section{
+  max-width: 20rem
 }
 
 .pokemon-stats{
@@ -417,7 +434,7 @@ font-weight: 700;
 }
 
 .stats{
-  width: 60%;
+  width: 13rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -552,4 +569,53 @@ font-weight: 700;
 .move-stats{
   display: flex;
   gap: 2px;
+}
+
+.item-container{
+  background-color: #f3f3f3;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 1rem;
+}
+
+.item-category-container{
+  position: absolute;
+  right: 1rem;
+}
+
+.item-category{
+  font-weight: 700;
+  color: grey;
+  margin-left: 0.5rem;
+}
+
+.item-data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  width: 22rem;
+}
+
+.item-datas > p {
+  margin: 0.5rem 0;
+}
+
+.cost-container{
+  display: flex;
+  align-items: center;  
+  max-width: 8rem;
+}
+
+.pokedollar{
+  width: 0.5rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+}
+
+
+.item-image-container{
+  width: 5rem;
 }

@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
 import { PokemonSearchContext } from "../context/PokemonSearchContext";
-
+import { Filters } from "./Filters";
 function Header(){
+
     const { searchState, setSearchState } = useContext(PokemonSearchContext)
     const location = useLocation();
     const headerTitle = location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.substring(1).slice(1);
@@ -22,7 +23,7 @@ function Header(){
                 type="search" 
                 placeholder={`Search for ${headerTitle}`}>
             </input>
-                {location.pathname === "/pokemons"  ? <p>filters</p>: null}
+                {location.pathname === "/pokemons"  ? <Filters />: null}
             <Outlet />
         </div>
     )

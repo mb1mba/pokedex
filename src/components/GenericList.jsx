@@ -18,11 +18,11 @@ function GenericList({ context, DisplayComponent }) {
   }, [searchState, data]);
 
   return (
-    <>
+    <div data-aos="fade-up">
       {displayedData.map(element => (
         <DisplayComponent key={element.name} element={element} />
       ))}
-    </>
+    </div>
   );
 }
 

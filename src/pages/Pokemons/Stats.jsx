@@ -3,8 +3,6 @@ import { useOutletContext } from "react-router-dom";
 
 function Stats(){
     const pokemon = useOutletContext()
-    const maxStatValue = 100
-    const barWidth = (pokemon.stats.map(stat => {stat["base_stat"]}) / maxStatValue) * 100;
 
     return ( pokemon &&
             <div className="datas-container">
