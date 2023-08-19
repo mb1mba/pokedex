@@ -324,7 +324,6 @@ body {
   min-height: 65%;
   padding: 5px 20px;
   min-width: 100%;
-  overflow: scroll;
 }
 
 .nav-link-container{
@@ -621,9 +620,10 @@ font-weight: 700;
 
 .filter-button{
   border: none;
-  padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
+   margin-right: 0.8rem;
   border-radius: 0.5rem;
   color:#fff;
   font-weight: 700;
+  min-width: 4rem;
+  height: 3rem;
 }
