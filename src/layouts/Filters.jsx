@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-
-import { PokedexContext } from "../context/PokedexContext";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export function Filters({}){
+
     const types = [
         "grass", 
         "fire", 
@@ -25,7 +25,8 @@ export function Filters({}){
 
     return (
         <div className="filter-container">
-            {types.map(type => <button className={`filter-button ${type}`}>{type}</button>)}
+            <Link relative="path" to="."className="filter-button all">All</Link>
+            {types.map(type => <Link  to={`?type=${type}` }className={`filter-button ${type}`}>{type}</Link>)}
         </div>
     )
 }

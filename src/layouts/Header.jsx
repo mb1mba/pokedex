@@ -23,7 +23,7 @@ function Header(){
                 type="search" 
                 placeholder={`Search for ${headerTitle}`}>
             </input>
-                {location.pathname === "/pokemons"  ? <Filters />: null}
+                {location.pathname === "/pokemons" || "/moves" ? <Filters />: null}
             <Outlet />
         </div>
     )
