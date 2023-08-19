@@ -3,30 +3,31 @@ import { useOutletContext, useParams } from "react-router-dom";
 import { getPokemonsDescription } from "../../api";
 
 function About(){
+
     const pokemon = useOutletContext()
     const [femaleRate, setFemaleRate] = useState(null);
     const [maleRate, setMaleRate] = useState(null);
     const [pokemonDescription, setPokemonDescription] = useState(null)
     const [eggGroupes, setEggGroupes] = useState(null);
     const {id} = useParams()
-
+    const [genderRate, setGenderRate] = useState(null)
 
     useEffect(() => {
         async function loadPokemonDescrition(){
             const data = await getPokemonsDescription(pokemon.id)
             setPokemonDescription(data);
-
-            const genderRate = data["gender_rate"];
-            setFemaleRate((genderRate / 8) * 100);
-            setMaleRate(100 - femaleRate);
-
+            setGenderRate(data?.["gender_rate"]) 
+            setMaleRate(genderRate === -1 ? 100 : 100 - femaleRate);
+            setFemaleRate(genderRate === 8 ? 100 : (genderRate / 8) * 100);
             setEggGroupes(data["egg_groups"][0].name)
         } 
         loadPokemonDescrition()
-    }, [id])
+    }, [id, genderRate, femaleRate])
+
+    console.log(maleRate, femaleRate, genderRate)
 
     return ( pokemonDescription &&
-        <div className="datas-container">
+        <div className="showUp">
             <div className="description-pokemon">
                 <p>{pokemonDescription["flavor_text_entries"][0]["flavor_text"]}</p>
             </div>
@@ -46,8 +47,8 @@ function About(){
                 <h3>Breeding</h3>
                 <div className="pokemon-elements">
                     <p className="elements-title">Gender</p>
-                    <p><i className="fa-solid fa-mars" style={{color:" #7aabff"}}></i>{maleRate}%</p>
-                    <p><i className="fa-solid fa-venus" style={{color: "#ff99f1"}}></i>{femaleRate}%</p>
+                    <p><i className="fa-solid fa-mars" style={{color:" #7aabff"}}></i>{ maleRate <= 0 ? 0 : maleRate}%</p>
+                    <p><i className="fa-solid fa-venus" style={{color: "#ff99f1"}}></i>{ femaleRate <= 0 ? 0 : femaleRate}%</p>
                 </div>
 
                 <div className="pokemon-elements">

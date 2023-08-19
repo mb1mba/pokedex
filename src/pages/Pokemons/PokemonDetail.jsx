@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import { useParams } from "react-router-dom";
-import setBodyColor from "../../setBodyColor";
+import setBodyColor from "../../utils/setBodyColor";
 import { PokedexContext } from "../../context/PokedexContext";
 import Pokemon from "../../components/Pokemon";
 import Navbar from "../../components/Navbar";
@@ -8,7 +8,6 @@ import Navbar from "../../components/Navbar";
 function PokemonDetail(){
 
     const { data } = useContext(PokedexContext)
-    console.log(data)
     const {id} = useParams()
     const currentPokemon = data[id - 1]
 
@@ -40,15 +39,19 @@ function PokemonDetail(){
           ground: "#e0c068",
           electric: "#e7e700",
           rock: "#b8a038",
-          fairy: "#ffaaff",
+          fairy: "#ef70ef",
+          ghost: "#705898",
+          ice: "#3fd8ff",
+          dragon: "#7038f8",
           ghost: "#705898"
+          
         };
       
         return types && types[0] ? typeColors[types[0]] : "";
     };
 
     setBodyColor({color: bgColor()})
-
+    
     return (currentPokemon &&  
         <>
             <Pokemon 

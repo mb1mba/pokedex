@@ -17,6 +17,7 @@ function MovesProvider({ children }) {
       </div>)
   }
 
+
   return (
     <MovesContext.Provider value={{ data }}>
       {children}

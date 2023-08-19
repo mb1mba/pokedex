@@ -1,14 +1,9 @@
 import React from "react";
 
-function Item({element}){
-    const name = element.name;
-    const image = element.sprites.default;
-    const description = element["flavor_text_entries"][0].text;
-    const cost = element.cost;
-    const category = element.category.name;
+export default function Card({name, image, description, cost, category}){
 
     return(
-                <div className="datas-container">
+        <div className="datas-container">
         <div data-aos="fade-up">
             <div className="item-container">
 
@@ -28,8 +23,6 @@ function Item({element}){
                 </div>
             </div>
         </div>
-    </div>        
+    </div>
     )
 }
-
-export default React.memo(Item)

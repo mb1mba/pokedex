@@ -21,7 +21,7 @@ function Evolution(){
     }, [])    
 
     return (
-        <div className="datas-container">
+        <div className="showUp">
             Evolutions goes here
         </div>
     )

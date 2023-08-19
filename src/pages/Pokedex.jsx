@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useContext } from "react";
-import setBodyColor from "../setBodyColor";
+import setBodyColor from "../utils/setBodyColor";
 import Pokemons from "../components/Pokemons";
 import { PokedexContext } from "../context/PokedexContext";
 import GenericList from "../components/GenericList";

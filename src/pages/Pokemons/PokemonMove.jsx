@@ -34,7 +34,7 @@ function PokemonMove(){
     }
 
     return (
-        <div className="datas-container">
+        <div className="showUp">
             <div className="moves">
             {pokemonMoves.map(element =>
                 <Move 

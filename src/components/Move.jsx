@@ -8,29 +8,47 @@ function Move({element}){
     const description = element?.["flavor_text_entries"]?.[0]?.["flavor_text"]
     const power = element?.power
     const accuracy = element?.accuracy
-
+    const pp = element?.pp
+    
     return(  
-        <div className="datas-container">
-                <Link key={name} to={name}className="moves">
-                    <div data-aos="fade-up"> 
-                        <div className={`pokemon-moves-details ${type}`}>
-                            <div className="move-desc">
-                                <p className="pokemon-move">{name}</p>
-                            </div>
+        <div key={name} to={name}className="moves">
+            <div data-aos="fade-up"> 
+                <div className={`pokemon-moves-details ${type}`}>
+            
+                    <div className="move-desc">
+                        <p className="pokemon-move">{name}</p>
+                        <p className={`pokemon-move-type ${type}`}>
+                        <img loading="lazy" src={`../../${type}.svg`} className={`logo-type ${type}`}></img>
+                            <span>
+                                <p className="move-type">{type.toUpperCase()}</p>
+                            </span>
+                        </p>
+                    </div>
 
-                            <div className="pokemon-move-characteristic">
-                                <p className="move-description">{description}</p>
-                                    <div className="move-stats">
-                                        <p className="move-accuracy">{accuracy ? accuracy : "-"}</p>
-                                        <p className="move-power">{power ? power : "-"}</p>
-                                    </div>
-                                    <img loading="lazy" src={`../../${type}.svg`} className={`logo-type ${type}`}></img>
-                                </div>  
-                            </div>
-                            <hr/>
+                    <div className="pokemon-move-characteristic">
+                        <p className="move-description">{description}</p>
+                    </div>  
+
+                    <div className="move-stats">
+                        <div className="stats">
+                            <p className="stats-element">ACCURACY</p>
+                            <p>{accuracy ? accuracy : "-"}</p>
                         </div>
-                </Link> 
-        </div>
+                        
+                        <div className="stats">
+                            <p className="stats-element">POWER</p>
+                            <p>{power ? power : "-"}</p>
+                        </div>
+
+                        <div className="stats">
+                            <p className="stats-element">PP</p>
+                            <p>{pp ? pp : "-"}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> 
     )
 }
 
