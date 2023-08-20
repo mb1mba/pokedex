@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import { useParams } from "react-router-dom";
 import setBodyColor from "../../utils/setBodyColor";
 import { PokedexContext } from "../../context/PokedexContext";
-import Pokemon from "../../components/Pokemon";
+import Pokemon from "../../components/Pokemon/Pokemon";
 import Navbar from "../../components/Navbar";
 
 function PokemonDetail(){

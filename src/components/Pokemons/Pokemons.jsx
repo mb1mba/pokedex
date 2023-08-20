@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import './pokemons.css'
 export default function Pokemons({element}){
     const types = element.types.map(obj => obj.type.name)
     const styles = types[0]

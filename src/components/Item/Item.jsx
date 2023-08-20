@@ -1,4 +1,5 @@
 import React from "react";
+import './item.css'
 
 function Item({element}){
     const name = element.name;
@@ -8,7 +9,7 @@ function Item({element}){
     const category = element.category.name;
 
     return(
-                <div className="datas-container">
+    <div className="datas-container">
         <div data-aos="fade-up">
             <div className="item-container">
 

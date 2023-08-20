@@ -1,0 +1,47 @@
+.item-container{
+    background-color: #f3f3f3;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 1rem;
+  }
+  
+  .item-category-container{
+    position: absolute;
+    right: 1rem;
+  }
+  
+  .item-category{
+    font-weight: 700;
+    color: grey;
+    margin-left: 0.5rem;
+  }
+  
+  .item-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    width: 22rem;
+  }
+  
+  .item-datas > p {
+    margin: 0.5rem 0;
+  }
+  
+  .cost-container{
+    display: flex;
+    align-items: center;  
+    max-width: 8rem;
+  }
+  
+  .pokedollar{
+    width: 0.5rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+  }
+  
+  .item-image-container{
+    width: 5rem;
+  }

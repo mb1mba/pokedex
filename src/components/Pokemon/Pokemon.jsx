@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import '../css/transition.css'
+import "../../css/transition.css"
+import './pokemon.css'
 
 export default function Pokemon({
     currentPokemon, 

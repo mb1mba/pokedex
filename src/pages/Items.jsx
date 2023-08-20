@@ -1,6 +1,6 @@
 import React from "react";
 import { ItemsContext } from "../context/ItemsContext";
-import Item from "../components/Item";
+import Item from "../components/Item/Item";
 import GenericList from "../components/GenericList";
 
 function Items(){

@@ -1,0 +1,103 @@
+.filter-container{
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+  justify-content: space-between;
+}
+
+.filter-button{
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   margin-right: 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  min-width: 4rem;
+  height: 3rem;
+  border: 2px solid;
+  border-color: var(--active-color);
+  color: var(--active-color);;
+}
+ 
+.active {
+  background-color: var(--active-color, currentColor); 
+  color: var(--active-text-color);
+  --active-text-color: #fff; 
+}
+  
+.border-all {
+  --active-color: #161616;
+}
+
+.border-water {
+  --active-color: #6890f0;
+}
+
+.border-poison {
+  --active-color: #a040a0;
+}
+
+.border-normal {
+  --active-color: #a8a878;
+}
+
+.border-fire {
+  --active-color: #f08030;
+}
+
+.border-bug {
+  --active-color: #a8b820;
+}
+
+.border-psychic {
+  --active-color: #be95c4;
+}
+
+.border-fighting {
+  --active-color: #c03028;
+}
+
+.border-ground {
+  --active-color: #e0c068;
+}
+
+.border-electric {
+  --active-color: #e7e700;
+}
+
+.border-rock {
+  --active-color: #b8a038;
+}
+
+.border-grass {
+  --active-color: #78c850;
+}
+
+.border-dragon {
+  --active-color: #5060e1;
+}
+
+.border-fairy {
+  --active-color: #ef70ef;
+}
+
+.border-dragon {
+  --active-color: #705898;
+}
+  
+.border-flying {
+  --active-color: #a890f0;
+}
+  
+.border-steel {
+  --active-color: #b8b8d0;
+}
+  
+.border-ice {
+  --active-color: #3fd8ff;
+}
+  
+.border-ghost {
+  --active-color: #705898;
+}
