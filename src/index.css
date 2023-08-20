@@ -397,3 +397,10 @@ font-weight: 700;
   align-items: center;
   width: 100%;
 }
+
+.evolution-chain-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
