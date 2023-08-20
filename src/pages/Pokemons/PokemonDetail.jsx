@@ -43,8 +43,6 @@ function PokemonDetail(){
           ghost: "#705898",
           ice: "#3fd8ff",
           dragon: "#7038f8",
-          ghost: "#705898"
-          
         };
       
         return types && types[0] ? typeColors[types[0]] : "";
