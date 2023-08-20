@@ -1,4 +1,4 @@
-export function filterPokemonByType(data, typeFilter) {
+export default function filterPokemonByType(data, typeFilter) {
     if (!typeFilter) {
       return data;
     }

@@ -1,9 +1,9 @@
-
+import filterMovesByType from "../utils/filterMovesByType"
+import filterPokemonByType from "../utils/filterPokemonByType"
 import React, { useContext, useState, useEffect } from "react";
 import { PokemonSearchContext } from "../context/PokemonSearchContext";
 import { useSearchParams, useLocation } from "react-router-dom";
-import { filterMovesByType } from "../utils/filterMovesByType";
-import { filterPokemonByType } from "../utils/FilterPokemonByType";
+
 
 function GenericList({ context, DisplayComponent }) {
   const {pathname} = useLocation()

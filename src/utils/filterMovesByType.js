@@ -1,4 +1,4 @@
-export function filterMovesByType(data, typeFilter) {
+export default function filterMovesByType(data, typeFilter) {
     if (!typeFilter) {
       return data;
     }
