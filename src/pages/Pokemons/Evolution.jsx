@@ -22,6 +22,7 @@ function Evolution() {
     }
     fetchData();
   }, [id]);
+  
   if(loading){
     return (
       <div className="wrapper">

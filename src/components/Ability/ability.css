@@ -1,0 +1,18 @@
+.ability{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ability-symbol{
+    width: 4rem;
+    height: 3rem;
+}
+
+.span-text{
+    font-weight: 700;
+}
+
+.pokemon-item-characteristic{
+    margin: 0 0.5rem
+}

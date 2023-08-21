@@ -9,7 +9,7 @@ export default function Pokemons({element}){
     const image = element && getImageURL(element.id)
 
     return (
-    <div aos-data="fade-up">
+    <div data-aos="fade-up"> 
         <Link to={`${element.id}`} className={`pokemon-container ${styles}`} key={element.id}>
             <div className="pokemon-data" key={element.id}>
                 <h2 className="pokemon-name">{element.name}</h2>
@@ -25,6 +25,8 @@ export default function Pokemons({element}){
             <div>
                 <img className="pokemon-img"  src={image}></img>
             </div>
+            
+            <p className="id">#{String(element.id).padStart(3, "0")}</p>
         </Link>
     </div>
 

@@ -13,7 +13,7 @@ function Item({element}){
         <div data-aos="fade-up">
             <div className="item-container">
 
-                <div className="item-data">
+                <div className="card">
                     <div className="item-image-container">
                         <img className="item-image" src={image}></img>
                     </div>

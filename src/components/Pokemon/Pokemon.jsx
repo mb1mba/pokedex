@@ -12,7 +12,7 @@ export default function Pokemon({
     hasPreviousPokemon, 
     nextPokemonImage, 
     prevPokemonImage}){
-    console.log(image)
+
     const [transition, setTransition] = useState("")
 
     const handleNextImageClick = () => {
@@ -31,7 +31,7 @@ export default function Pokemon({
     
                         <div className="pokemon-name-id-container">
                             <h1>{currentPokemon.name}</h1>
-                            <p className="pokemon-id">{`#00${currentPokemon.id}`}</p>
+                            <p className="pokemon-id">{`#${String(currentPokemon.id).padStart(3, "0")}`}</p>
                         </div>
 
                         <div className="pokemon-species-type-container">

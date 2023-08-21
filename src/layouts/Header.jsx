@@ -13,8 +13,8 @@ function Header(){
 
     return(
         <div className="container">
-            <Link to="/"> &larr; Go back</Link>
-            <h1>{headerTitle}</h1>
+            <Link to="/"> &larr;</Link>
+            <h1 className="layout-title">{headerTitle}</h1>
             <input 
                 onChange={handleChange}
                 value={searchState?.value}

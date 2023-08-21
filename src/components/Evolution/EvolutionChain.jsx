@@ -32,7 +32,7 @@ function EvolutionChain({ chain }) {
             <p>LVL {minLevel}</p>
           </div>
           }
-          
+
           <EvolutionCard data={evolutionData} />
           <div className="evolution-chain">
             {evolves_to && evolves_to.length > 0 && evolves_to.forEach((evolution) => {
@@ -43,7 +43,11 @@ function EvolutionChain({ chain }) {
       );
     }
 
-    return renderedChain;
+    const evolution = renderedChain.length === 1 ?
+    <h2>This pokemon have no evolution</h2> : 
+    renderedChain
+
+    return evolution
   };
 
   return <div className="pokemon-evolution-chain">{renderEvolutionChain()}</div>;
