@@ -12,7 +12,7 @@ export default function Pokemon({
     hasPreviousPokemon, 
     nextPokemonImage, 
     prevPokemonImage}){
-    
+    console.log(image)
     const [transition, setTransition] = useState("")
 
     const handleNextImageClick = () => {

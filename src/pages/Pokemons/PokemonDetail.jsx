@@ -4,6 +4,7 @@ import setBodyColor from "../../utils/setBodyColor";
 import { PokedexContext } from "../../context/PokedexContext";
 import Pokemon from "../../components/Pokemon/Pokemon";
 import Navbar from "../../components/Navbar";
+import { getImageURL } from "../../utils/getImageUrl"
 
 function PokemonDetail(){
 
@@ -12,7 +13,7 @@ function PokemonDetail(){
     const currentPokemon = data[id - 1]
 
     const nextPokemonId = currentPokemon && currentPokemon.id + 1;
-    const hasNextPokemon = nextPokemonId <= 150;
+    const hasNextPokemon = nextPokemonId <= 600;
     const nextPokemon = hasNextPokemon ? data[currentPokemon?.id] : null
 
     const prevPokemonId = currentPokemon?.id - 1
@@ -22,9 +23,9 @@ function PokemonDetail(){
     const [pokemonSpecies, setPokemonSpecies] = useState(null)
 
     const types = currentPokemon && currentPokemon.types.map(typeObj => typeObj.type.name)
-    const image = currentPokemon && currentPokemon.sprites?.other?.["official-artwork"]?.front_default
-    const nextPokemonImage = nextPokemon && nextPokemon.sprites?.other?.["official-artwork"]?.front_default
-    const prevPokemonImage = previousPokemon && previousPokemon.sprites?.other?.["official-artwork"]?.front_default
+    const image = currentPokemon && getImageURL(currentPokemon.id)
+    const nextPokemonImage = nextPokemon && getImageURL(nextPokemonId)
+    const prevPokemonImage = previousPokemon && getImageURL(prevPokemonId)
     
     const bgColor = () => {
         const typeColors = {

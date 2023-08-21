@@ -398,9 +398,36 @@ font-weight: 700;
   width: 100%;
 }
 
-.evolution-chain-container{
+.pokemon-evolution-chain{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  overflow: scroll;
+}
+
+.evolution-img{
+  width: 8rem;
+}
+
+.down-arrow{
+  width: 1rem;
+}
+
+.level-container{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 1rem;
+  font-weight: 700;
+}
+
+.pokemon-chain-item{
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+.pokemon-card{
+  margin: 0 1rem
 }

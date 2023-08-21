@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
 import { PokemonSearchContext } from "../context/PokemonSearchContext";
-import { Filters } from "./Filters/Filters";
-
+import Filters from "./Filters/Filters";
 function Header(){
     const { searchState, setSearchState } = useContext(PokemonSearchContext)
     const location = useLocation();
@@ -29,5 +28,5 @@ function Header(){
     )
 }
 
-export default Header
+export default React.memo(Header)
 

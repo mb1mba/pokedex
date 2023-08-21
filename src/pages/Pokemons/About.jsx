@@ -24,8 +24,6 @@ function About(){
         loadPokemonDescrition()
     }, [id, genderRate, femaleRate])
 
-    console.log(maleRate, femaleRate, genderRate)
-
     return ( pokemonDescription &&
         <div className="showUp">
             <div className="description-pokemon">
@@ -35,7 +33,7 @@ function About(){
             <div className="pokemon-sizes">
                 <div>
                     <p className="size">Weight</p>
-                    <p>{`${pokemon.weight} kg`}</p>
+                    <p>{`${pokemon.weight/10} kg`}</p>
                 </div>
                 <div>
                     <p className="size">Height</p>

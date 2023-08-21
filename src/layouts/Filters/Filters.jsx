@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './filters.css'
 
-export function Filters({}){
+function Filters(){
     const [isActive, setIsActive] = React.useState("all")
 
     const handleButtonClick = (type) => {
@@ -48,3 +48,5 @@ export function Filters({}){
         </div>
     )
 }
+
+export default React.memo(Filters)

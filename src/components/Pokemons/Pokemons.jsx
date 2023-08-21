@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getImageURL } from "../../utils/getImageUrl";
 import './pokemons.css'
+
 export default function Pokemons({element}){
     const types = element.types.map(obj => obj.type.name)
     const styles = types[0]
-    const image = element.sprites && element.sprites.other["official-artwork"]["front_default"]
+    const image = element && getImageURL(element.id)
 
     return (
     <div aos-data="fade-up">
@@ -21,7 +23,7 @@ export default function Pokemons({element}){
             </div>
 
             <div>
-                <img className="pokemon-img" loading="lazy" src={image}></img>
+                <img className="pokemon-img"  src={image}></img>
             </div>
         </Link>
     </div>

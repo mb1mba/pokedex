@@ -1,0 +1,52 @@
+import React from "react";
+import EvolutionCard from "./EvolutionCard";
+
+function EvolutionChain({ chain }) {
+  const renderEvolutionChain = () => {
+    const stack = [chain.chain];
+    const renderedChain = [];
+
+    while (stack.length > 0) {
+      const current = stack.pop();
+      const species = current?.species
+      const evolves_to = current?.evolves_to
+      const evolution_details = current?.evolution_details
+      const minLevel = evolution_details?.[0]?.min_level;
+      const item = evolution_details?.[0]?.item?.name
+      const id = species?.url.split("/").slice(-2, -1)[0];
+
+      if (id > 150) {
+        continue; 
+      }
+      
+      const evolutionData = {
+        species,
+        minLevel,
+      };
+
+      renderedChain.push(
+        <div className="pokemon-chain-item" key={species?.name}>
+          {minLevel && 
+          <div className="level-container">
+            <img src="/arrow-right.svg"></img>
+            <p>LVL {minLevel}</p>
+          </div>
+          }
+          
+          <EvolutionCard data={evolutionData} />
+          <div className="evolution-chain">
+            {evolves_to && evolves_to.length > 0 && evolves_to.forEach((evolution) => {
+              stack.push(evolution);
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    return renderedChain;
+  };
+
+  return <div className="pokemon-evolution-chain">{renderEvolutionChain()}</div>;
+}
+
+export default EvolutionChain;

@@ -1,5 +1,6 @@
 const BASE_URL = 'https://pokeapi.co/api/v2/'
 
+
 export async function getDatas() {
     const res = await fetch(`${BASE_URL}pokemon?offset=0&limit=150`)
     const data = await res.json()
