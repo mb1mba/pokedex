@@ -74,3 +74,24 @@
       background-size: 13rem;
     }
   }
+
+  @media only screen and (max-width: 1024px) and (min-width: 769px){
+    h1{
+      font-size: 3rem;
+    }
+
+    .link-container{
+      display: grid;
+      grid-template: repeat(2, auto) / repeat(2, 22.5rem);
+      justify-content: center;
+      align-items: center;
+      grid-column-gap: 0.5rem;
+      align-items: center;
+    }
+
+    .links{
+      height:9.5rem;
+      background-size: 13rem;
+      background-position: 130% center;      
+    }
+  }
