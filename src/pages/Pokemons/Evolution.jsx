@@ -7,6 +7,7 @@ function Evolution() {
   const { id } = useParams();
   const [evolutionChain, setEvolutionChain] = useState([]);
   const [loading, setLoading] = useState(false)
+  
   useEffect(() => {
     setLoading(true)
     async function fetchData() {

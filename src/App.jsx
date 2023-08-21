@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Pokedex from './pages/Pokedex';
 import Items from './pages/Items';
 import Abilities from './pages/Abilities';
