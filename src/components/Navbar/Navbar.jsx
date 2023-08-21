@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-
+import "./navbar.css"
 export default function Navbar({currentPokemon}){
     return(
         <div className={`data-container`}>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useOutletContext } from "react-router-dom";
 import { getPokemonMoves } from "../../api";
-import Move from "../../components/Move";
+import Move from "../../components/Move/Move";
 
 function PokemonMove(){
     const currentPokemon = useOutletContext()

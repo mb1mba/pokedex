@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { getPokemonEvolution } from "../../api";
-import EvolutionChain from "../../components/Evolution/EvolutionChain"
+import EvolutionChain from "../../components/Evolution/EvolutionChain/EvolutionChain"
 
 function Evolution() {
   const { id } = useParams();

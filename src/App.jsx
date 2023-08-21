@@ -1,4 +1,4 @@
-import React, {useEffect, lazy, Suspense} from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Pokedex from './pages/Pokedex';
@@ -6,19 +6,18 @@ import Items from './pages/Items';
 import Abilities from './pages/Abilities';
 import Header from './layouts/Header';
 import PokemonDetail from './pages/Pokemons/PokemonDetail';
-import MoveDetail from './pages/Moves/MoveDetail';
 import './App.css';
-import About from './pages/Pokemons/About';
+import About from './pages/Pokemons/About/About';
 import PokemonMove from './pages/Pokemons/PokemonMove';
 import Evolution from './pages/Pokemons/Evolution';
-import Stats from './pages/Pokemons/Stats';
+import Stats from './pages/Pokemons/Stats/Stats';
 import { PokemonSearchProvider } from './context/PokemonSearchContext';
 import { PokedexProvider } from './context/PokedexContext';
 import { ItemsProvider } from './context/ItemsContext';
 import { AbilitiesProvider } from './context/AbilitiesContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-import Moves from './pages/Moves/Moves';
+import Moves from './pages/Pokemons/Moves';
 import { MovesProvider } from './context/MovesContext';
 
 function App() {

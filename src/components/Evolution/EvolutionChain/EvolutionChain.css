@@ -1,0 +1,14 @@
+.level-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 1rem;
+    font-weight: 700;
+  }
+  
+  .pokemon-chain-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,16 @@
+.pokemon-card{
+    margin: 0 1rem
+  }
+  
+.evolution-img{
+    width: 8rem;
+}
+
+.pokemon-evolution-chain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+  }
+  

@@ -1,5 +1,5 @@
 import React from "react";
-import Move from "../../components/Move";
+import Move from "../../components/Move/Move";
 import { MovesContext } from "../../context/MovesContext";
 import GenericList from "../../components/GenericList";
 

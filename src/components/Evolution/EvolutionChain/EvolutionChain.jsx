@@ -1,6 +1,6 @@
 import React from "react";
-import EvolutionCard from "./EvolutionCard";
-
+import EvolutionCard from "../EvolutionCard";
+import './EvolutionChain.css'
 function EvolutionChain({ chain }) {
   const renderEvolutionChain = () => {
     const stack = [chain.chain];

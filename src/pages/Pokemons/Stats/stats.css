@@ -1,0 +1,53 @@
+.pokemon-stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+  }
+
+.statsBar {
+    flex: 1;
+    height: 4px;
+    border-radius: 5px;
+    max-width: 50%;
+    height: 0.5rem;
+}
+  
+  .stat-category{
+    font-weight:700;
+    margin: 0;
+  }
+
+  .progress{
+    background-color: rgb(243, 243, 243);
+  }
+  
+  .bar {
+    border-radius: 5px;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    animation: progressBar 2s ease-in-out;
+    animation-fill-mode:both; 
+    height: 0.5rem;
+  }
+  
+  .base-stats-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 21rem;
+    padding: 10px;
+  }
+  
+  .base-stats{
+    width: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  @keyframes progressBar {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }

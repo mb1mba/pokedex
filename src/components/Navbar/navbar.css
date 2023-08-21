@@ -1,0 +1,16 @@
+.nav-link-container{
+    padding-top: 4vh;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .active-link{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+  }
+  
+  a{
+    text-decoration: none;
+    color: #161616;
+  }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect }from "react";
 import { useOutletContext, useParams } from "react-router-dom";
-import { getPokemonsDescription } from "../../api";
+import {getPokemonsDescription} from "../../../api"
+import "./about.css"
 
 function About(){
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {getImageURL} from "../../utils/getImageUrl"
-
+import './evolutionCard.css'
 function EvolutionCard({ data }) {
   const species = data?.species
   const name = species?.name

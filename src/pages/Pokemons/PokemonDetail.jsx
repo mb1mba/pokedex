@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import setBodyColor from "../../utils/setBodyColor";
 import { PokedexContext } from "../../context/PokedexContext";
 import Pokemon from "../../components/Pokemon/Pokemon";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import { getImageURL } from "../../utils/getImageUrl"
 
 function PokemonDetail(){

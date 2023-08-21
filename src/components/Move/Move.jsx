@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./move.css"
 function Move({element}){
 
     const name = element?.name
