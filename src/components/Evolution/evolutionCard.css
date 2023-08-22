@@ -12,5 +12,6 @@
     align-items: center;
     text-align: center;
     overflow: scroll;
+    max-width: 31rem;
+    margin: 0 auto;
   }
-  

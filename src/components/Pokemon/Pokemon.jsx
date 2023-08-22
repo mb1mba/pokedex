@@ -24,26 +24,25 @@ export default function Pokemon({
       };
     
     return (
-        <>
-            <div className="pokemon-detail-container" key={currentPokemon.id}>
-                <Link to="/pokemons"> &larr;</Link>
-                <div className="header-detail">
-                        <div className="pokemon-name-id-container">
-                            <h1>{currentPokemon.name}</h1>
-                            <p className="pokemon-id">{`#${String(currentPokemon.id).padStart(3, "0")}`}</p>
-                        </div>
-
-                        <div className="pokemon-species-type-container">
-                            <div className="pokemon-type-container">
-                                {types.map(type => 
-                                    <p key={type} className="pokemon-type">
-                                        {type}  
-                                    </p>
-                                )}
-                            </div>
-                            <p className="pokemon-species">{pokemonSpecies}</p>
-                        </div>
+        <>               <div className="header-detail">
+        <Link to="/pokemons"> &larr;</Link>
+                <div className="pokemon-name-id-container">
+                    <h1>{currentPokemon.name}</h1>
+                    <p className="pokemon-id">{`#${String(currentPokemon.id).padStart(3, "0")}`}</p>
                 </div>
+
+                <div className="pokemon-species-type-container">
+                    <div className="pokemon-type-container">
+                        {types.map(type => 
+                            <p key={type} className="pokemon-type">
+                                {type}  
+                            </p>
+                        )}
+                    </div>
+                    <p className="pokemon-species">{pokemonSpecies}</p>
+                </div>
+        </div>
+            <div className="pokemon-detail-container" key={currentPokemon.id}>
 
                 <div className="imgs-container">
                     <div className="pokemon-img-container" id="current-pokemon-image">

@@ -29,6 +29,9 @@
     margin-top: 25px;
     max-width: 90rem;
     margin: 0 auto;
+    position: relative;
+    top: 2em;
+    padding: 0 1rem;
   }
 
   .pokemon-id{
@@ -66,12 +69,10 @@
 .pokemon-img-data{
   width: 15rem;
   position: absolute;
-  z-index: 20;
-  top: 7.6rem
 }
 
 .queue {
-  top: 10rem;
+  top: 5rem;
   position: absolute;
   width: 12.5rem;
   filter: brightness(0) opacity(0.7) contrast(0.5) drop-shadow(0 0 0 black);
@@ -87,26 +88,24 @@
 }
 
 @media only screen and (min-width: 768px){
-
+  .header-detail{
+    font-size: 1.5rem;
+  }
  .queue{
-  top: 12rem;
   width: 13rem;
  }
 
   .pokemon-img-data{
     width: 20rem;
-    top: 8rem;
   }
 
   .pokeball-an{
-    top: 2rem;
     width: 15rem;
     height: 15rem;
   }
 
   .pokemon-detail-container{
-    justify-content: space-between;
-    height: 25rem;
+    height: 19rem;
     width: 48rem;
     margin: 0 auto;
   }
