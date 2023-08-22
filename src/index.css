@@ -95,10 +95,10 @@ input{
   background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  min-height: 37rem;
   padding: 5px 20px;
   width: 100%;
-  overflow: sh;
+  position: absolute;
+  min-height: 65%;
 }
 
 @media only screen and (min-width:769px ) {
@@ -106,7 +106,8 @@ input{
     max-width: 49rem;
     margin: 0 auto;
     border-radius: 1rem;
-    min-height: 65%
+    min-height: 35vh;
+    position: relative;
   }
 }
 

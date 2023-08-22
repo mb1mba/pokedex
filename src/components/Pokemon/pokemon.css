@@ -69,6 +69,7 @@
 .pokemon-img-data{
   width: 15rem;
   position: absolute;
+  z-index: 1;
 }
 
 .queue {
