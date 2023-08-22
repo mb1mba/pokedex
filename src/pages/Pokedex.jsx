@@ -1,9 +1,9 @@
 import React from "react";
 import Pokemons from "../components/Pokemons/Pokemons";
 import setBodyColor from "../utils/setBodyColor";
-import { PokedexContext } from "../context/PokedexContext";
+import { PokedexContext } from "../context/PokedexContext"; 
 import GenericList from "../components/GenericList";
-
+import './pokedex.css'
 function Pokedex(){
 
      setBodyColor({color:" #fff"})
