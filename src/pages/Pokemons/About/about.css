@@ -42,3 +42,16 @@
   .pokemon-section{
     max-width: 20rem
   }
+
+  @media only screen and (min-width: 768px){
+    .pokemon-sizes{
+      width: 100%;
+    }
+
+    .about-container{
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+
+
+  }

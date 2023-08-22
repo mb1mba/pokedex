@@ -52,7 +52,7 @@ function PokemonDetail(){
     setBodyColor({color: bgColor()})
     
     return (currentPokemon &&  
-        <>
+        <div className="page-container">
             <Pokemon 
                 currentPokemon={currentPokemon}
                 image={image}
@@ -67,7 +67,7 @@ function PokemonDetail(){
             <Navbar 
                 currentPokemon={currentPokemon}
             />
-        </>
+        </div>
     )
 }
 

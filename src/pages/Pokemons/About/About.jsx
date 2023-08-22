@@ -27,6 +27,7 @@ function About(){
 
     return ( pokemonDescription &&
         <div className="showUp">
+            <div className="about-container">
             <div className="description-pokemon">
                 <p>{pokemonDescription["flavor_text_entries"][0]["flavor_text"]}</p>
             </div>
@@ -72,6 +73,7 @@ function About(){
                     )}
                     </div>
                 </div>
+            </div>
         </div>
     )
 }

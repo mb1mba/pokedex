@@ -28,7 +28,6 @@ export default function Pokemon({
             <div className="pokemon-detail-container" key={currentPokemon.id}>
                 <Link to="/pokemons"> &larr;</Link>
                 <div className="header-detail">
-    
                         <div className="pokemon-name-id-container">
                             <h1>{currentPokemon.name}</h1>
                             <p className="pokemon-id">{`#${String(currentPokemon.id).padStart(3, "0")}`}</p>
@@ -44,8 +43,10 @@ export default function Pokemon({
                             </div>
                             <p className="pokemon-species">{pokemonSpecies}</p>
                         </div>
-                        
-                        <div className="pokemon-img-container" id="current-pokemon-image">
+                </div>
+
+                <div className="imgs-container">
+                    <div className="pokemon-img-container" id="current-pokemon-image">
                             <img className={`pokemon-img-data ${transition}`} src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
                         </div>
@@ -68,7 +69,7 @@ export default function Pokemon({
                                 </img>
                             </Link>}
                     </div>
-                </div>
+                </div>                    
             </div>
         </>
     )

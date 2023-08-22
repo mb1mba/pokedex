@@ -95,12 +95,16 @@ input{
   background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  position: absolute;
-  max-width: 730px;
   min-height: 65%;
   padding: 5px 20px;
-  max-width: 100%;
   width: 100%;
+}
+
+@media only screen and (min-width:768px ) {
+  .data-container{
+    max-width: 49rem;
+    margin: 0 auto;
+  }
 }
 
 .showUp{
@@ -124,12 +128,17 @@ input{
   .pokedex-container,
   .moves-container,
   .items-container,
-  .abilities-container{
+  .abilities-container,
+  .pokemon-moves-container{
     display:grid;
     grid-column-gap: 1.6rem;
     max-width: 100%;
     justify-content: center;
     grid-column-gap: 1.6rem
+  }
+
+  .pokemon-moves-container{
+    grid-template: auto / repeat(2, auto);
   }
 }
 
@@ -142,7 +151,7 @@ input{
   }
 }
 
-@media only screen and (max-width: 1535px) and (min-width: 1440px){
+@media only screen and (min-width: 1440px){
 .pokedex-container,
 .moves-container,
 .items-container{
@@ -152,8 +161,8 @@ input{
 
 @media (min-width: 1536px){
   .pokedex-container,
-  .moves-container,
-  .items-container{
+  .items-container,
+  .moves-container{
     grid-template: auto / repeat(4, auto);    
   }
 }

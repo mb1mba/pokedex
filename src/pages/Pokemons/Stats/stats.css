@@ -38,6 +38,8 @@
     align-items: center;
     height: 21rem;
     padding: 10px;
+    max-width: 25rem;
+    margin: 0 auto;
   }
   
   .base-stats{

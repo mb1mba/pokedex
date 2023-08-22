@@ -9,8 +9,21 @@
     text-decoration: underline;
     color: #161616;
   }
+
+
   
   a{
     text-decoration: none;
     color: #161616;
   }
+
+@media only screen and (min-width: 768px) {
+  .nav-link{
+    margin: 0 auto;
+    max-width: 40rem
+  }
+
+  .nav-link-container{
+    max-width: 48rem;
+  }
+}
