@@ -5,7 +5,9 @@ import GenericList from "../components/GenericList";
 
 function Items(){
     return(
-        <GenericList context={ItemsContext} DisplayComponent={Item} />
+        <div className="items-container">
+            <GenericList context={ItemsContext} DisplayComponent={Item} />
+        </div>
     )
 }
 

@@ -15,10 +15,10 @@ import { PokemonSearchProvider } from './context/PokemonSearchContext';
 import { PokedexProvider } from './context/PokedexContext';
 import { ItemsProvider } from './context/ItemsContext';
 import { AbilitiesProvider } from './context/AbilitiesContext';
+import Moves from './pages/Moves';
+import { MovesProvider } from './context/MovesContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-import Moves from './pages/Pokemons/Moves';
-import { MovesProvider } from './context/MovesContext';
 
 function App() {
 

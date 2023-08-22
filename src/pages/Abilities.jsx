@@ -4,7 +4,9 @@ import { AbilitiesContext } from "../context/AbilitiesContext";
 import Ability from "../components/Ability/Ability";
 function Abilities() {
   return (
-    <GenericList context={AbilitiesContext} DisplayComponent={Ability} />
+    <div className="abilities-container">
+        <GenericList context={AbilitiesContext} DisplayComponent={Ability} />
+    </div>
   );
 }
 

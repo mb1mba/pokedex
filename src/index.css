@@ -21,7 +21,6 @@ body {
 
 .layout-title{
   margin: 0.5rem 0;
-  text-align: left;
 }
 
 input{
@@ -104,41 +103,6 @@ input{
   width: 100%;
 }
 
-.pokeball-an{
-  position: relative;
-  top: 40px;
-  display: inline-block;
-  animation: rotate 5s linear infinite;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.pokemon-img-data{
-  width: 240px;
-  position: absolute;
-  z-index: 20;
-  top: 7.6rem
-}
-
-.queue {
-  top: 7.5rem;
-  position: absolute;
-  width: 200px;
-  filter: brightness(0) opacity(0.7) contrast(0.5) drop-shadow(0 0 0 black);
-}
-
-.next-pokemon{
-  left: 300px;
-}
-
-.prev-pokemon{
-  right: 300px
-}
-
 .showUp{
   animation: showup 1s;
 }
@@ -154,4 +118,42 @@ input{
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-top: 1rem;
+}
+
+@media (min-width: 768px){
+  .pokedex-container,
+  .moves-container,
+  .items-container,
+  .abilities-container{
+    display:grid;
+    grid-column-gap: 1.6rem;
+    max-width: 100%;
+    justify-content: center;
+    grid-column-gap: 1.6rem
+  }
+}
+
+@media only screen and (max-width: 1439px) and (min-width: 768px){
+  .pokedex-container,
+  .moves-container,
+  .items-container,
+  .abilities-container{
+    grid-template: auto / repeat(2, auto);
+  }
+}
+
+@media only screen and (max-width: 1535px) and (min-width: 1440px){
+.pokedex-container,
+.moves-container,
+.items-container{
+  grid-template: auto / repeat(3, auto);
+  }
+}
+
+@media (min-width: 1536px){
+  .pokedex-container,
+  .moves-container,
+  .items-container{
+    grid-template: auto / repeat(4, auto);    
+  }
 }
