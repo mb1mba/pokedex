@@ -6,17 +6,15 @@ Pokedex app built with React
 
 - [x] Home
 - [x] Pokedex
-- [ ] Pokemon type filter 
+- [x] Pokemon type filter 
 - [x] Pokemon detail - About
 - [x] Pokemon detail - Base Stats
-- [ ] Pokemon detail - Evolution Chain
+- [x] Pokemon detail - Evolution Chain
 - [x] Pokemon detail - Moves
 - [x] Moves
-- [ ] Moves detail
-- [ ] Moves  type filter 
-- [ ] Items
-- [ ] Items details
-- [ ] Fetching animation
+- [x] Moves  type filter 
+- [x] Items
+- [x] Fetching animation
 
 <h1>Thanks</h1>
 
