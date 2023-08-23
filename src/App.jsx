@@ -7,7 +7,6 @@ import Items from './pages/Items';
 import Abilities from './pages/Abilities';
 import Header from './layouts/Header';
 import PokemonDetail from './pages/Pokemons/PokemonDetail';
-import './App.css';
 import About from './pages/Pokemons/About/About';
 import PokemonMove from './pages/Pokemons/PokemonMove';
 import Evolution from './pages/Pokemons/Evolution';
