@@ -17,13 +17,23 @@
     color:black;
     margin-bottom: 25px;
     cursor: pointer;
+    color:#fff;
   }
 
+  .pokemon-container:hover .pokemon-img {
+    transform: scale(1.05); 
+  }
+
+  .pokemon-container:hover .id{
+    opacity: 1;
+  }
+  
   .id{
     position: absolute;
     right: 1rem;
     top: 0;
     opacity: 0.2;
+    transition: ease-in 0.3s;
   }
 
   .pokedex-container{
@@ -101,10 +111,11 @@
   .ghost{background-color: #705898}
   
   .pokemon-img{
-    width: 160px;
+    width: 10rem;
     position: relative;
     left: 1.5rem;
-    top: 1rem
+    top: 1rem;
+    transition: transform .5s ease;
   }
   
   .pokemon-types{
