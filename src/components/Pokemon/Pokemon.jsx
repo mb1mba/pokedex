@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/transition.css"
 import './pokemon.css'
 
@@ -12,7 +12,7 @@ export default function Pokemon({
     hasPreviousPokemon, 
     nextPokemonImage, 
     prevPokemonImage}){
-
+    const navigate = useNavigate()
     const [transition, setTransition] = useState("")
 
     const handleNextImageClick = () => {
@@ -22,10 +22,39 @@ export default function Pokemon({
       const handlePrevImageClick = () => {
         setTransition("animate__animated animate__fadeInLeft");
       };
+
+      const [touchStart, setTouchStart] = useState(null);
+      const [touchEnd, setTouchEnd] = useState(null);
+    
+      // the required distance between touchStart and touchEnd to be detected as a swipe
+      const minSwipeDistance = 50;
+    
+      const onTouchStart = (e) => {
+        setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+        setTouchStart(e.targetTouches[0].clientX);
+      };
+    
+      const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+    
+      const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+    
+        if (isLeftSwipe) {
+          // Navigate to the previous Pokémon page
+          navigate(`/pokemons/${currentPokemon.id + 1}`); // You can use this to go back to the previous page
+        } else if (isRightSwipe) {
+          // Navigate to the next Pokémon page
+          navigate(-1); // Replace with the actual URL of the next page
+        }
+      };
     
     return (
-        <>               <div className="header-detail">
-        <Link to="/pokemons"> &larr;</Link>
+        <>   
+        <div className="header-detail" >
+            <Link to="/pokemons" > &larr;</Link>
                 <div className="pokemon-name-id-container">
                     <h1>{currentPokemon.name}</h1>
                     <p className="pokemon-id">{`#${String(currentPokemon.id).padStart(3, "0")}`}</p>
@@ -44,7 +73,10 @@ export default function Pokemon({
         </div>
             <div className="pokemon-detail-container" key={currentPokemon.id}>
 
-                <div className="imgs-container">
+                <div className="imgs-container"
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}>
                     <div className="pokemon-img-container" id="current-pokemon-image">
                             <img className={`pokemon-img-data ${transition}`} src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
