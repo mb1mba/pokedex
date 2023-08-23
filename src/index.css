@@ -19,8 +19,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  padding: 20px;
-}
+  padding: 20px;}
 
 .layout-title{
   margin: 0.5rem 0;
@@ -188,4 +187,16 @@ input{
   .moves-container{
     grid-template: auto / repeat(4, auto);    
   }
+}
+
+.container{
+  margin: 0 auto;
+}
+
+.container{
+  max-width: 96rem;
+}
+
+input{
+  max-width: 93rem;
 }

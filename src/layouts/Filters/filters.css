@@ -1,9 +1,15 @@
 .filter-container{
   width: 100%;
   display: flex;
-  overflow: scroll;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
+  max-width: 94rem
+}
+
+@media screen and (max-width: 1414px) {
+  .filter-container{
+    overflow: scroll;
+  }
 }
 
 .filter-button{
