@@ -27,7 +27,7 @@ function PokemonMove(){
 
     if (loading) {
         return (
-            <div className="wrapper">
+            <div className="nav-wrapper">
                 <div className="pokeball">
                 </div>
             </div>)

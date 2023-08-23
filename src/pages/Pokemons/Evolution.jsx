@@ -24,17 +24,17 @@ function Evolution() {
     fetchData();
   }, [id]);
   
-  if(loading){
-    return (
-      <div className="wrapper">
+  return (
+    <>    
+   { loading ? 
+      <div className="nav-wrapper">
           <div className="pokeball">
           </div>
-      </div>)
-  }
-  return (
-    <>
-          <h2>Evolution Chain</h2>
-          <EvolutionChain chain={evolutionChain} />
+      </div>  :
+      <> 
+        <h2>Evolution Chain</h2>
+        <EvolutionChain chain={evolutionChain} />
+      </>}
     </>
   );
 }
