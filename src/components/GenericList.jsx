@@ -8,7 +8,7 @@ import { useSearchParams, useLocation } from "react-router-dom";
 function GenericList({ context, DisplayComponent }) {
   const {pathname} = useLocation()
   const { data } = useContext(context);
-  const { searchState } = useContext(SearchContext);
+  const { searchState, setSearchState } = useContext(SearchContext);
   const [displayedData, setDisplayedData] = useState(data);
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")
@@ -27,6 +27,10 @@ function GenericList({ context, DisplayComponent }) {
     setDisplayedData(filteredType)
   }, [searchState, typeFilter, data]);
   
+  useEffect(() => {
+    setSearchState("")
+  }, [searchParams])
+
   return (
     <>
       {displayedData.map(element => (
