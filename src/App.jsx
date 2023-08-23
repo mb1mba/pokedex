@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTopButton from './components/Buttton/scrollToTopBtn';
 import Home from './pages/Home/Home';
 import Pokedex from './pages/Pokedex';
 import Items from './pages/Items';
@@ -21,7 +22,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 
 function App() {
-
   useEffect(() => {
     AOS.init()
     AOS.refresh()
@@ -64,6 +64,7 @@ function App() {
                 </Route>
               </Routes>
           </BrowserRouter>
+          <ScrollToTopButton />
         </SearchProvider>
   )
 }
