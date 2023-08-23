@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import './filters.css'
+import { useLocation } from "react-router-dom";
+
 
 function Filters(){
-    const [isActive, setIsActive] = React.useState("all")
-
+    const { search, pathname } = useLocation()
+    const params = search.length === 0 ? "all" : search.substr(6, search.length)
+    const [isActive, setIsActive] = useState(params)
+    
     const handleButtonClick = (type) => {
         if(type !== isActive){
             setIsActive(type)
         }
     };
+
+    useEffect(()=>{
+        setIsActive(params)
+    }, [search])
     
     const types = [
         "all",
