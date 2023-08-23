@@ -1,14 +1,14 @@
 import filterMovesByType from "../utils/filterMovesByType"
 import filterPokemonByType from "../utils/filterPokemonByType"
 import React, { useContext, useState, useEffect } from "react";
-import { PokemonSearchContext } from "../context/PokemonSearchContext";
+import { SearchContext } from "../context/SearchContext";
 import { useSearchParams, useLocation } from "react-router-dom";
 
 
 function GenericList({ context, DisplayComponent }) {
   const {pathname} = useLocation()
   const { data } = useContext(context);
-  const { searchState } = useContext(PokemonSearchContext);
+  const { searchState } = useContext(SearchContext);
   const [displayedData, setDisplayedData] = useState(data);
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")

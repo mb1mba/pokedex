@@ -11,7 +11,7 @@ import About from './pages/Pokemons/About/About';
 import PokemonMove from './pages/Pokemons/PokemonMove';
 import Evolution from './pages/Pokemons/Evolution';
 import Stats from './pages/Pokemons/Stats/Stats';
-import { PokemonSearchProvider } from './context/PokemonSearchContext';
+import { SearchProvider } from './context/SearchContext';
 import { PokedexProvider } from './context/PokedexContext';
 import { ItemsProvider } from './context/ItemsContext';
 import { AbilitiesProvider } from './context/AbilitiesContext';
@@ -28,7 +28,7 @@ function App() {
   }, [location.pathname])
   
   return(
-        <PokemonSearchProvider>
+        <SearchProvider>
           <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>} />
@@ -64,7 +64,7 @@ function App() {
                 </Route>
               </Routes>
           </BrowserRouter>
-        </PokemonSearchProvider>
+        </SearchProvider>
   )
 }
 export default App

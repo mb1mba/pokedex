@@ -41,13 +41,10 @@
   }
 
   .links:hover{
-    background-position: 110% center;background-position: 110% center; /* Move the background image slightly to the right when hovered */
+    background-position: 110% center;
+    
   }
 
-  .links:active{
-    background-position: 110% center;
-  }
-  
   .links.pokedex{
     background-color: #159F6E ;
   }

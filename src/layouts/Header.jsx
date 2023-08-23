@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
-import { PokemonSearchContext } from "../context/PokemonSearchContext";
+import { SearchContext } from "../context/SearchContext";
 import Filters from "./Filters/Filters";
 function Header(){
-    const { searchState, setSearchState } = useContext(PokemonSearchContext)
+    const { searchState, setSearchState } = useContext(SearchContext)
     const location = useLocation();
     const headerTitle = location.pathname.substring(1).charAt(0).toUpperCase() + location.pathname.substring(1).slice(1);
 

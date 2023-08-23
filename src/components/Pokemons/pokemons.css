@@ -16,8 +16,9 @@
     text-decoration: none;
     color:black;
     margin-bottom: 25px;
+    cursor: pointer;
   }
-  
+
   .id{
     position: absolute;
     right: 1rem;

@@ -28,16 +28,14 @@ function EvolutionChain({ chain }) {
       ) : (
         <p>{item}</p>
       );
-        console.log(item)
+
       renderedChain.push(
         <div className="pokemon-chain-item" key={species?.name}>
-          
           <div className="level-container">
             {item !== undefined && <img src="/arrow-right.svg" />}
             <p>{triggerEvolution}</p>
           </div>
-          
-
+    
           <EvolutionCard data={evolutionData} />
           <div className="evolution-chain">
             {evolves_to && evolves_to.length > 0 && evolves_to.forEach((evolution) => {
