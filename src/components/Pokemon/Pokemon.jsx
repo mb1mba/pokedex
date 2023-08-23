@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../css/transition.css"
 import './pokemon.css'
-
+import useSwipe from "../../hook/useSwipe";
 export default function Pokemon({
     currentPokemon, 
     image, 
@@ -12,45 +12,34 @@ export default function Pokemon({
     hasPreviousPokemon, 
     nextPokemonImage, 
     prevPokemonImage}){
-    const navigate = useNavigate()
+
     const [transition, setTransition] = useState("")
+    const navigate = useNavigate()
 
     const handleNextImageClick = () => {
-        setTransition("animate__animated animate__fadeInRight");
+        setTransition("animate__animated animate__slideInRight");
+        setSwipeDirection("")
       }
     
-      const handlePrevImageClick = () => {
-        setTransition("animate__animated animate__fadeInLeft");
+    const handlePrevImageClick = () => {
+        setTransition("animate__animated animate__slideInLeft");
+        setSwipeDirection("")
       };
 
-      const [touchStart, setTouchStart] = useState(null);
-      const [touchEnd, setTouchEnd] = useState(null);
-    
-      // the required distance between touchStart and touchEnd to be detected as a swipe
-      const minSwipeDistance = 50;
-    
-      const onTouchStart = (e) => {
-        setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX);
-      };
-    
-      const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
-    
-      const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return;
-        const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
-    
-        if (isLeftSwipe) {
-          // Navigate to the previous Pokémon page
-          navigate(`/pokemons/${currentPokemon.id + 1}`); // You can use this to go back to the previous page
-        } else if (isRightSwipe) {
-          // Navigate to the next Pokémon page
-          navigate(-1); // Replace with the actual URL of the next page
+    const { onTouchStart, onTouchMove, onTouchEnd, swipeDirection, setSwipeDirection } = useSwipe(
+        () => {
+        currentPokemon.id <= 150 &&
+          navigate(`/pokemons/${currentPokemon.id + 1}`);
+          setTransition("")
+          
+        },
+        () => {
+        currentPokemon.id >= 2 && 
+          navigate(`/pokemons/${currentPokemon.id - 1}`);
+          setTransition("") 
         }
-      };
-    
+      );   
+
     return (
         <>   
         <div className="header-detail" >
@@ -73,12 +62,14 @@ export default function Pokemon({
         </div>
             <div className="pokemon-detail-container" key={currentPokemon.id}>
 
-                <div className="imgs-container"
+                <div
+                    className={`imgs-container`}
                     onTouchStart={onTouchStart}
                     onTouchMove={onTouchMove}
-                    onTouchEnd={onTouchEnd}>
+                    onTouchEnd={onTouchEnd}
+                    >
                     <div className="pokemon-img-container" id="current-pokemon-image">
-                            <img className={`pokemon-img-data ${transition}`} src={image}></img>
+                            <img className={`pokemon-img-data ${transition} ${swipeDirection}`} src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
                         </div>
                     
@@ -87,7 +78,7 @@ export default function Pokemon({
                             <Link to={`/pokemons/${currentPokemon.id + 1}`}>
                                 <img onClick={handleNextImageClick} 
                                 src={nextPokemonImage} 
-                                className={`queue next-pokemon ${transition}`}
+                                className={`queue next-pokemon ${transition} ${swipeDirection}`}
                                 ></img>
                             </Link>}
                             
@@ -95,7 +86,7 @@ export default function Pokemon({
                             <Link to={`/pokemons/${currentPokemon.id - 1}`}>
                                 <img onClick={handlePrevImageClick} 
                                 src={prevPokemonImage}  
-                                className={`queue prev-pokemon ${transition}`}
+                                className={`queue prev-pokemon ${transition} ${swipeDirection}`}
                                 >
                                 </img>
                             </Link>}
