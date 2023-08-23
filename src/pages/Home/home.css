@@ -5,6 +5,7 @@
     align-items: left;
     flex-direction: column;
     max-width: 50rem;
+    min-height: 100vh;
   }
 
   .link-container{
