@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
 import { SearchContext } from "../context/SearchContext";
 import Filters from "./Filters/Filters";
+
 function Header(){
     const { searchState, setSearchState } = useContext(SearchContext)
     const location = useLocation();
@@ -10,6 +11,10 @@ function Header(){
     function handleChange(event){
         setSearchState({value: event.target.value})
     }
+
+    useEffect(() => {
+            setSearchState({ value: "" });    
+    }, [location.pathname, setSearchState]);
 
     return(
         <div className="container">
