@@ -36,7 +36,7 @@ export default function Pokemon({
         () => {
         currentPokemon.id >= 2 && 
           navigate(`/pokemons/${currentPokemon.id - 1}`);
-          setTransition("") 
+          setTransition("")
         }
       );   
 
@@ -69,7 +69,7 @@ export default function Pokemon({
                     onTouchEnd={onTouchEnd}
                     >
                     <div className="pokemon-img-container" id="current-pokemon-image">
-                            <img className={`pokemon-img-data ${transition} ${swipeDirection}`} src={image}></img>
+                            <img className={`pokemon-img-data ${transition} ${currentPokemon.id === 1 ? "animate__animated animate__slideInRight" : swipeDirection}`} src={image}></img>
                             <img className="pokeball-an" src={"../../pokeball.png"}></img>
                         </div>
                     
@@ -86,7 +86,7 @@ export default function Pokemon({
                             <Link to={`/pokemons/${currentPokemon.id - 1}`}>
                                 <img onClick={handlePrevImageClick} 
                                 src={prevPokemonImage}  
-                                className={`queue prev-pokemon ${transition} ${swipeDirection}`}
+                                className={`queue prev-pokemon ${transition} ${currentPokemon.id >= 2 && swipeDirection}`}
                                 >
                                 </img>
                             </Link>}
