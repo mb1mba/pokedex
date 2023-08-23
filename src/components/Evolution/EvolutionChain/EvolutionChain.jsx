@@ -14,7 +14,6 @@ function EvolutionChain({ chain }) {
       const minLevel = evolution_details?.[0]?.min_level;
       const item = evolution_details?.[0]?.item?.name
       const id = species?.url.split("/").slice(-2, -1)[0];
-
       if (id > 150) {
         continue; 
       }
@@ -23,15 +22,21 @@ function EvolutionChain({ chain }) {
         species,
         minLevel,
       };
-
+      
+      const triggerEvolution = minLevel ? (
+        <p>LVL {minLevel}</p>
+      ) : (
+        <p>{item}</p>
+      );
+        console.log(item)
       renderedChain.push(
         <div className="pokemon-chain-item" key={species?.name}>
-          {minLevel && 
+          
           <div className="level-container">
-            <img src="/arrow-right.svg"></img>
-            <p>LVL {minLevel}</p>
+            {item !== undefined && <img src="/arrow-right.svg" />}
+            <p>{triggerEvolution}</p>
           </div>
-          }
+          
 
           <EvolutionCard data={evolutionData} />
           <div className="evolution-chain">
