@@ -1,9 +1,5 @@
 @import url(https://db.onlinewebfonts.com/c/7908e7be605377f17d6c0f074e33a3d9?family=Neuzeit+Office+W01+Regular);
 
-#root{
-  min-height: 100vh;
-}
-
 :root {
   --bodyColor: "#000000";
 }
