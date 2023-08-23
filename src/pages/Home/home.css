@@ -5,7 +5,7 @@
     align-items: left;
     flex-direction: column;
     height: 100vh;
-    max-width: 90rem;
+    max-width: 50rem;
   }
 
   .link-container{
@@ -18,7 +18,7 @@
   }
   
   .links{
-    max-width: 90rem;
+    max-width: 50rem;
     width: 100%;
     height: 6.5rem;
     border-radius: 1.875rem;
@@ -36,7 +36,17 @@
     font-size: 1.7rem;
     padding-left:10px;
     font-weight: 700;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;    }
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: background-position 0.3s ease;
+  }
+
+  .links:hover{
+    background-position: 110% center;background-position: 110% center; /* Move the background image slightly to the right when hovered */
+  }
+
+  .links:active{
+    background-position: 110% center;
+  }
   
   .links.pokedex{
     background-color: #159F6E ;
@@ -60,18 +70,26 @@
     margin: 0
   }
 
-  @media only screen and (max-width: 768px) and (min-width: 640px){
-    h1{
-      font-size: 2.5rem;
-    }
-    .link-container{
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      height: 35rem;
-    }
-    .links{
-      height: 7.5rem;
-      background-size: 13rem;
-    }
+@media screen and (min-width: 640px) {
+  .links{
+    height: 7.5rem;
+    background-size: 13rem;
   }
+}
+
+@media screen and (min-width: 768px) {
+
+  .home{
+    margin: 0 auto;
+  }
+
+  .link-container{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    height: 35rem;
+  }
+
+}
+
