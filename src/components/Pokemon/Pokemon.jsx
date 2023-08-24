@@ -60,8 +60,8 @@ export default function Pokemon({
                     <p className="pokemon-species">{pokemonSpecies}</p>
                 </div>
         </div>
-            <div className="pokemon-detail-container" key={currentPokemon.id}>
 
+            <div className="pokemon-detail-container" key={currentPokemon.id}>
                 <div
                     className={`imgs-container`}
                     onTouchStart={onTouchStart}

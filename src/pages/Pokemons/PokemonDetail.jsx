@@ -5,6 +5,7 @@ import { PokedexContext } from "../../context/PokedexContext";
 import Pokemon from "../../components/Pokemon/Pokemon";
 import Navbar from "../../components/Navbar/Navbar";
 import { getImageURL } from "../../utils/getImageUrl"
+import NotFound from "../../components/NotFound/NotFound";
 
 function PokemonDetail(){
 
@@ -51,8 +52,8 @@ function PokemonDetail(){
 
     setBodyColor({color: bgColor()})
     
-    return (currentPokemon &&  
-        <div className="page-container">
+    return (currentPokemon && currentPokemon.id <= 150 ? 
+        <>
             <Pokemon 
                 currentPokemon={currentPokemon}
                 image={image}
@@ -67,7 +68,7 @@ function PokemonDetail(){
             <Navbar 
                 currentPokemon={currentPokemon}
             />
-        </div>
+        </> : <NotFound />
     )
 }
 

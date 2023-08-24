@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTopButton from './components/Buttton/scrollToTopBtn';
+import NotFound from './components/NotFound/NotFound';
 import Home from './pages/Home/Home';
 import Pokedex from './pages/Pokedex';
 import Items from './pages/Items';
@@ -30,6 +31,7 @@ function App() {
         <SearchProvider>
           <BrowserRouter>
             <Routes>
+            <Route path="*" element={<NotFound />}/>
                 <Route path="/" element={<Home/>} />
                 
                 <Route element={<Header />}>
